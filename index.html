@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>.:::. SIGEVEN .:::. SISTEMA DE GESTIÓN DE VENTAS</title>
+  <link rel="stylesheet" href="Content/metro-bootstrap.css">
+  <link rel="stylesheet" href="Content/angular-toastr.css">
+  <link rel="stylesheet" href="Content/calendar.css">
+  <link rel="stylesheet" href="Content/font-awesome.css">
+  <link rel="stylesheet" href="Content/jquery-ui.css">
+  <link rel="stylesheet" href="Content/loading-bar.css">
+  <link rel="stylesheet" href="Content/style.css">
+  <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body ng-controller="applicationController as vm">
+  <div class="content">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            SIGEVEN
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">
+                <span class="fa fa-info-circle"></span> Ayuda</a>
+            </li>
+            <li ng-if="vm.logueado">
+              <a href="" ng-click="vm.logout()"><span class="fa fa-sign-out"></span> Salir</a>
+            </li>
+            <li ng-if="!vm.logueado">
+              <a href="" ui-sref="login" ui-sref-active="active">
+                <span class="fa fa-sign-in"></span> Iniciar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div ui-view></div>
+    </div>
+  </div>
+
+  <script src="Scripts/angular.js"></script>
+  <script src="Scripts/jquery.js"></script>
+  <script src="Scripts/bootstrap.js"></script>
+  <script src="Scripts/bootbox.js"></script>
+  <script src="Scripts/jquery-ui.js"></script>
+  <script src="Scripts/datepicker-es.js"></script>
+  <script src="Scripts/jquery.mask.js"></script>
+  <script src="Scripts/log.js"></script>
+  <script src="Scripts/modules/angular-animate.js"></script>
+  <script src="Scripts/modules/angular-file-upload.js"></script>
+  <script src="Scripts/modules/angular-local-storage.js"></script>
+  <script src="Scripts/modules/angular-toastr.js"></script>
+  <script src="Scripts/modules/angular-ui-router.js"></script>
+  <script src="Scripts/modules/loading-bar.js"></script>
+  <script src="Scripts/modules/ui-bootstrap-tpls.js"></script>
+  <script src="Scripts/utils.js"></script>
+  <!-- scripts funcionamiento -->
+  <script src="App/app.js"></script>
+  <script src="App/shared/configuration.service.js"></script>
+  <script src="App/shared/data.service.js"></script>
+  <script src="App/shared/authentication.service.js"></script>
+  <script src="App/app.router.js"></script>
+  <script src="App/app.config.js"></script>
+  <script src="App/app.controller.js"></script>
+  <script src="App/public/login/login.controller.js"></script>
+</body>
+
+</html>
