@@ -29,6 +29,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
+            <img src="content/img/favicon.ico" alt="" width="30" style="margin-top:-5px">
             SIGEVEN
           </a>
         </div>
@@ -38,12 +39,9 @@
               <a href="#">
                 <span class="fa fa-info-circle"></span> Ayuda</a>
             </li>
-            <li ng-if="vm.logueado">
-              <a href="" ng-click="vm.logout()"><span class="fa fa-sign-out"></span> Salir</a>
-            </li>
-            <li ng-if="!vm.logueado">
-              <a href="" ui-sref="login" ui-sref-active="active">
-                <span class="fa fa-sign-in"></span> Iniciar Sesión</a>
+            <li>
+              <a href="" >
+                <span class="fa fa-compass"></span> ¿Estas perdido?</a>
             </li>
           </ul>
         </div>
