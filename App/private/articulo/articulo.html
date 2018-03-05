@@ -4,54 +4,154 @@
       <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Articulos</p>
   </div>
   <div class="panel panel-default">
-    <div class="panel-heading">Registro de artículos</div>
+    <div class="panel-heading">Lista de todos los artículos</div>
     <div class="panel-body">
-      <form class="form-horizontal" novalidate role="form" name="frmArticulo">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label col-md-3">Descripción:</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label col-md-3">Cantidad</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label col-md-3"></label>
-              <div class="col-md-8">
-                <input type="text" class="form-control">
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+      <p>
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#NuevoArticulo">
+          <span class="fa fa-plus"></span> Nuevo artículo</button>
+      </p>
+      <div class="table-responsive">
+          <table class="table table-hover table-bordered ">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Descripción</th>
+                  <th>Stock</th>
+                  <th>Precio Compra</th>
+                  <th>Precio Venta</th>
+                  <th>Marca</th>
+                  <th>Tipo</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in vm.lista">
+                  <td class="text-right">{{item.Id}}</td>
+                  <td>{{item.cDescripcion}}</td>
+                  <td class="text-right">{{item.nStock}}</td>
+                  <td class="text-right">S/ {{item.nPrecioCompra}}</td>
+                  <td class="text-right">S/ {{item.nPrecioVenta}}</td>
+                  <td>{{item.cMarca}}</td>
+                  <td>{{item.cTipo}}</td>
+                  <td>
+                    <button class="btn btn-primary btn-block">
+                      <span class="fa fa-pencil"></span> Editar</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger btn-block">
+                      <span class="fa fa-trash"></span> Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
     </div>
-    <div class="panel-footer">
-      <div class="row">
-        <div class="col-md-offset-6 col-md-3">
-          <p>
-            <button class="btn btn-danger btn-block">
-              <span class="fa fa-arrow-circle-left "></span> Regresar</button>
-          </p>
+  </div>
+
+  <div id="NuevoArticulo" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Nuevo Artículo</h4>
         </div>
-        <div class="col-md-3">
-          <p>
-            <button class="btn btn-primary btn-block">
-              <span class="fa fa-save"></span> Registrar</button>
-          </p>
+        <div class="modal-body">
+          <form class="form-horizontal" novalidate role="form" name="frmArticulo">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Descripción:</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" autofocus autocomplete="off">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Marca: </label>
+                  <div class="col-md-8">
+                    <select class="form-control">
+                      <option>--Seleccione--</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Tipo: </label>
+                  <div class="col-md-8">
+                    <select class="form-control">
+                      <option>--Seleccione--</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Cantidad: </label>
+                  <div class="col-md-8">
+                    <input type="number" class="form-control" autocomplete="off">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Precio de Compra: </label>
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">S/</span>
+                      <input type="text" class="form-control" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Precio de Venta: </label>
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">S/</span>
+                      <input type="text" class="form-control" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-8">
+                    <p>
+                      <button class="btn btn-info btn-block" type="button">
+                        <span class="fa fa-upload"></span> Cargar imagen</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-offset-6 col-md-3">
+                <p>
+                  <button class="btn btn-danger btn-block" type="button">
+                    <span class="fa fa-arrow-circle-left "></span> Regresar</button>
+                </p>
+              </div>
+              <div class="col-md-3">
+                <p>
+                  <button class="btn btn-primary btn-block" type="submit">
+                    <span class="fa fa-save"></span> Registrar</button>
+                </p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
+
     </div>
   </div>
 </div>
