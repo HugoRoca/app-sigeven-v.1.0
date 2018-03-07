@@ -5,8 +5,7 @@ class Usuario{
 
     protected $db;
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->db = DB();
     }
 
@@ -24,7 +23,5 @@ class Usuario{
         //return json_encode($cUsuario . '-' . $cContrasenia);
         return json_encode($data);
     }
-
-
 }
 ?>

@@ -73,8 +73,9 @@
                 <div class="form-group">
                   <label class="control-label col-md-3">Marca: </label>
                   <div class="col-md-8">
-                    <select class="form-control">
-                      <option>--Seleccione--</option>
+                    <select class="form-control" ng-model="vm.Articulos.nMarca">
+                      <option value="0">--Seleccione--</option>
+                      <option ng-repeat="item in vm.Marca" value="{{item.cValor}}">{{item.cNomCod}}</option>
                     </select>
                   </div>
                 </div>
@@ -83,8 +84,9 @@
                 <div class="form-group">
                   <label class="control-label col-md-3">Tipo: </label>
                   <div class="col-md-8">
-                    <select class="form-control">
-                      <option>--Seleccione--</option>
+                    <select class="form-control" ng-model="vm.Articulos.nTipo">
+                      <option value="0">--Seleccione--</option>
+                      <option ng-repeat="item in vm.Tipos" value="{{item.cValor}}">{{item.cNomCod}}</option>
                     </select>
                   </div>
                 </div>
