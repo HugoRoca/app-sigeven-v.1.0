@@ -25,6 +25,10 @@
         url: '/articulo',
         templateUrl: 'App/private/articulo/articulo.html'
       })
+      .state('venta', {
+        url: '/venta',
+        templateUrl: 'App/private/venta/venta.html'
+      })
       .state('otherwise', {
         url: '*path',
         templateUrl: 'App/public/inicio/inicio.html'

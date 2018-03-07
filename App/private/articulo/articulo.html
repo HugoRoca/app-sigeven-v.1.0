@@ -1,54 +1,66 @@
 <div ng-controller="articuloController as vm">
-  <div class="page-header">
-    <p>
-      <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Articulos</p>
-  </div>
   <div class="panel panel-default">
-    <div class="panel-heading">Lista de todos los artículos</div>
+    <div class="panel-heading">
+      <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Articulos</div>
     <div class="panel-body">
       <p>
-        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#Articulo">
-          <span class="fa fa-plus"></span> Nuevo artículo</button>
+        <form class="form-inline">
+          <div class="form-group mb-2">
+            <label class="control-label">Código: </label>
+            <input type="text" class="form-control large-sm">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label class="control-label"> ó Nombre del artículo: </label>
+            <input type="text" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="fa fa-search"></span> Buscar</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Articulo">
+            <span class="fa fa-plus"></span> Nuevo artículo
+          </button>
+        </form>
       </p>
+
       <div class="table-responsive">
-          <table class="table table-hover table-bordered ">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Descripción</th>
-                  <th>Stock</th>
-                  <th>Precio Compra</th>
-                  <th>Precio Venta</th>
-                  <th>Marca</th>
-                  <th>Tipo</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="item in vm.lista">
-                  <td class="text-right">{{item.Id}}</td>
-                  <td>{{item.cDescripcion}}</td>
-                  <td class="text-right">{{item.nStock}}</td>
-                  <td class="text-right">S/ {{item.nPrecioCompra | number:2}}</td>
-                  <td class="text-right">S/ {{item.nPrecioVenta | number:2}}</td>
-                  <td>{{item.cMarca}}</td>
-                  <td>{{item.cTipo}}</td>
-                  <td>
-                    <button class="btn btn-primary btn-block" ng-click="vm.listaPorId(item.Id)">
-                      <span class="fa fa-pencil"></span> Editar</button>
-                  </td>
-                  <td>
-                    <button class="btn btn-danger btn-block" ng-click="vm.anular(item.Id)">
-                      <span class="fa fa-trash"></span> Eliminar</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <table class="table table-hover table-bordered ">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Descripción</th>
+              <th>Stock</th>
+              <th>Precio Compra</th>
+              <th>Precio Venta</th>
+              <th>Marca</th>
+              <th>Tipo</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in vm.lista">
+              <td class="text-right">{{item.Id}}</td>
+              <td>{{item.cDescripcion}}</td>
+              <td class="text-right">{{item.nStock}}</td>
+              <td class="text-right">S/ {{item.nPrecioCompra | number:2}}</td>
+              <td class="text-right">S/ {{item.nPrecioVenta | number:2}}</td>
+              <td>{{item.cMarca}}</td>
+              <td>{{item.cTipo}}</td>
+              <td>
+                <button class="btn btn-primary btn-block" ng-click="vm.listaPorId(item.Id)">
+                  <span class="fa fa-pencil"></span> Editar</button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-block" ng-click="vm.anular(item.Id)">
+                  <span class="fa fa-trash"></span> Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <p class="text-center">
-        <a href="" ui-sref="portal" ui-sref-activate="activate" class="btn btn-danger btn-lg"><span class="fa fa fa-caret-square-o-left"></span> Regresar</a>
+        <a href="" ui-sref="portal" ui-sref-activate="activate" class="btn btn-danger">
+          <span class="fa fa fa-caret-square-o-left"></span> Regresar</a>
       </p>
 
     </div>
@@ -62,7 +74,8 @@
           <h4 class="modal-title">{{vm.tituloModal}}</h4>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal" novalidate role="form" name="frmArticulo" ng-submit="vm.insertarEditar(frmArticulo.$valid)" novalidate>
+          <form class="form-horizontal" novalidate role="form" name="frmArticulo" ng-submit="vm.insertarEditar(frmArticulo.$valid)"
+            novalidate>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
