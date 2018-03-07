@@ -7,7 +7,7 @@
     <div class="panel-heading">Lista de todos los artículos</div>
     <div class="panel-body">
       <p>
-        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#NuevoArticulo">
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#Articulo">
           <span class="fa fa-plus"></span> Nuevo artículo</button>
       </p>
       <div class="table-responsive">
@@ -46,10 +46,15 @@
               </tbody>
             </table>
       </div>
+
+      <p class="text-center">
+        <a href="" ui-sref="portal" ui-sref-activate="activate" class="btn btn-danger btn-lg"><span class="fa fa fa-caret-square-o-left"></span> Regresar</a>
+      </p>
+
     </div>
   </div>
 
-  <div id="NuevoArticulo" class="modal fade" role="dialog">
+  <div id="Articulo" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -57,13 +62,13 @@
           <h4 class="modal-title">Nuevo Artículo</h4>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal" novalidate role="form" name="frmArticulo">
+          <form class="form-horizontal" novalidate role="form" name="frmArticulo" ng-submit="vm.insertar(frmArticulo.$valid)" novalidate>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label col-md-3">Descripción:</label>
                   <div class="col-md-8">
-                    <input type="text" class="form-control" autofocus autocomplete="off">
+                    <input type="text" class="form-control" autofocus autocomplete="off" ng-model="vm.Articulos.cDescripcion" required maxlength="100">
                   </div>
                 </div>
               </div>
@@ -73,8 +78,8 @@
                 <div class="form-group">
                   <label class="control-label col-md-3">Marca: </label>
                   <div class="col-md-8">
-                    <select class="form-control" ng-model="vm.Articulos.nMarca">
-                      <option value="0">--Seleccione--</option>
+                    <select class="form-control" ng-model="vm.Articulos.nMarca" requiredq>
+                      <option value="">--Seleccione--</option>
                       <option ng-repeat="item in vm.Marca" value="{{item.cValor}}">{{item.cNomCod}}</option>
                     </select>
                   </div>
@@ -84,8 +89,8 @@
                 <div class="form-group">
                   <label class="control-label col-md-3">Tipo: </label>
                   <div class="col-md-8">
-                    <select class="form-control" ng-model="vm.Articulos.nTipo">
-                      <option value="0">--Seleccione--</option>
+                    <select class="form-control" ng-model="vm.Articulos.nTipo" required>
+                      <option value="">--Seleccione--</option>
                       <option ng-repeat="item in vm.Tipos" value="{{item.cValor}}">{{item.cNomCod}}</option>
                     </select>
                   </div>
@@ -97,7 +102,7 @@
                 <div class="form-group">
                   <label class="control-label col-md-3">Cantidad: </label>
                   <div class="col-md-8">
-                    <input type="number" class="form-control" autocomplete="off">
+                    <input type="number" class="form-control text-right" autocomplete="off" ng-model="vm.Articulos.nStock" required>
                   </div>
                 </div>
               </div>
@@ -107,7 +112,7 @@
                   <div class="col-md-8">
                     <div class="input-group">
                       <span class="input-group-addon">S/</span>
-                      <input type="text" class="form-control" autocomplete="off">
+                      <input type="text" class="form-control text-right" autocomplete="off" ng-model="vm.Articulos.nPrecioCompra" required>
                     </div>
                   </div>
                 </div>
@@ -120,7 +125,7 @@
                   <div class="col-md-8">
                     <div class="input-group">
                       <span class="input-group-addon">S/</span>
-                      <input type="text" class="form-control" autocomplete="off">
+                      <input type="text" class="form-control text-right" autocomplete="off" ng-model="vm.Articulos.nPrecioVenta" required>
                     </div>
                   </div>
                 </div>

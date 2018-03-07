@@ -29,13 +29,13 @@ function pintaConsola() {
 
     //console.API.clear();
 
-    var codeStyle = 'background: #454544; font-size: 14px; font-weight: bold;font-family: Courier; color: #FFB700;  border-radius: 4px; padding: 5px 5px;';
+    /*var codeStyle = 'background: #454544; font-size: 14px; font-weight: bold;font-family: Courier; color: #FFB700;  border-radius: 4px; padding: 5px 5px;';
 
     log('[c="font-family: Courier; color: #FFB700; font-size: 70px; padding: 5px 5px; background: #454544; border-radius: 4px; line-height: 100px; font-weight: Bold;text-shadow: 0 1px #000"]¡Alto![c]');
     log.l('%cEsta funcion está pensada solo para desarrolladores, si alguien te indicó que', codeStyle);
     log.l('%ccopiaras y pegaras algo aquí para habilitar una funcion o para "hackear" la  ', codeStyle);
     log.l('%ccuenta de alguien, se trata de un fraude. Si lo haces esta persona podrá     ', codeStyle);
-    log.l('%cacceder a tu cuenta.                                                         ', codeStyle);
+    log.l('%cacceder a tu cuenta.                                                         ', codeStyle);*/
 }
 
 
