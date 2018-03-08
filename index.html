@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="Content/jquery-ui.css">
   <link rel="stylesheet" href="Content/loading-bar.css">
   <link rel="stylesheet" href="Content/style.css">
+  <link rel="stylesheet" href="Content/bootstrap-datepicker.css">
   <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
 </head>
 
@@ -57,6 +58,7 @@
   <script src="Scripts/bootstrap.js"></script>
   <script src="Scripts/bootbox.js"></script>
   <script src="Scripts/jquery-ui.js"></script>
+  <script src="Scripts/bootstrap-datepicker.js"></script>
   <script src="Scripts/datepicker-es.js"></script>
   <script src="Scripts/jquery.mask.js"></script>
   <script src="Scripts/log.js"></script>
@@ -80,6 +82,23 @@
   <script src="App/private/portal/portal.controller.js"></script>
   <script src="App/private/articulo/articulo.controller.js"></script>
   <script src="App/private/venta/venta.controller.js"></script>
+
+  <script>
+    $(function () {
+        $('#txtFecha').mask('00/00/0000');
+
+        $("#txtFecha").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'dd/mm/yy',
+            yearRange: "-100:-17",
+            defaultDate: "-17y-m-d"
+        });
+
+    });
+</script>
+
+
 </body>
 
 </html>
