@@ -87,6 +87,39 @@ CREATE TABLE `usuario` (
 
 insert  into `usuario`(`Id`,`cNomUsu`,`cContrasenia`,`cNombres`) values (1,'hroca','ventas2018','Hugo Antonio Roca Espinoza'),(2,'jchavez','ventas2018',NULL);
 
+/*Table structure for table `venta` */
+
+DROP TABLE IF EXISTS `venta`;
+
+CREATE TABLE `venta` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `dFecha` date NOT NULL,
+  `nCantidad` int(11) NOT NULL,
+  `nTotal` double NOT NULL,
+  `cUsuReg` varchar(50) NOT NULL,
+  `dFechaReg` datetime NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `venta` */
+
+/*Table structure for table `ventadetalle` */
+
+DROP TABLE IF EXISTS `ventadetalle`;
+
+CREATE TABLE `ventadetalle` (
+  `nIdVenta` int(11) NOT NULL,
+  `nIdArticulo` int(11) NOT NULL,
+  `nCantidad` int(11) NOT NULL,
+  `nPrecio` double NOT NULL,
+  KEY `venta` (`nIdVenta`),
+  KEY `articulo` (`nIdArticulo`),
+  CONSTRAINT `articulo` FOREIGN KEY (`nIdArticulo`) REFERENCES `articulo` (`Id`),
+  CONSTRAINT `venta` FOREIGN KEY (`nIdVenta`) REFERENCES `venta` (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `ventadetalle` */
+
 /* Procedure structure for procedure `Articulo_Actualiza_SP` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `Articulo_Actualiza_SP` */;
