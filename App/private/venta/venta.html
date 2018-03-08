@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Ventas
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="margin:10px">
             <form role="form" class="form-horizontal" novalidate name="frmVenta">
                 <div class="row">
                     <div class="col-md-offset-10 col-md-2">
@@ -48,12 +48,10 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <div class="col-md-11">
-                                <p>
-                                    <button type="button" class="btn btn-primary btn-block" ng-click="vm.agregaFila()">
-                                        <span class="fa fa-plus"></span> Agregar</button>
-                                </p>
-                            </div>
+                            <p>
+                                <button type="button" class="btn btn-primary btn-block" ng-click="vm.agregaFila()">
+                                    <span class="fa fa-plus"></span> Agregar</button>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -61,15 +59,29 @@
             <div class="table-responsive" id="tblVentas">
                 <table class="table table table-hover table-bordered ">
                     <thead>
-                        <th>ID</th>
-                        <th>Artículo</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
+                        <tr>
+                            <th>Seleccionar</th>
+                            <th>ID</th>
+                            <th>Artículo</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tblTbody">
                     </tbody>
+                    <tfoot>
+                        <td colspan="4" class="text-right"><h4><b>Total:</b></h4> </td>
+                        <td class="text-right"><h4><b>{{vm.Ventas.nCantidadTotal}}</b></h4></td>
+                        <td class="text-right"><h4><b>{{vm.Ventas.nTotalVenta | currency:'S/'}}</b></h4></td>
+                    </tfoot>
                 </table>
+            </div>
+            <div class="row">
+                <p class="text-right">
+                    <button class="btn btn-danger" id="btnEliminar" ng-click="vm.eliminarFila()">
+                        <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                </p>
             </div>
         </div>
     </div>

@@ -35,8 +35,8 @@
               <td class="text-right">{{item.Id}}</td>
               <td>{{item.cDescripcion}}</td>
               <td class="text-right">{{item.nStock}}</td>
-              <td class="text-right">S/ {{item.nPrecioCompra | number:2}}</td>
-              <td class="text-right">S/ {{item.nPrecioVenta | number:2}}</td>
+              <td class="text-right">{{item.nPrecioCompra | currency:'S/'}}</td>
+              <td class="text-right">{{item.nPrecioVenta | currency:'S/'}}</td>
               <td>{{item.cMarca}}</td>
               <td>{{item.cTipo}}</td>
               <td>
