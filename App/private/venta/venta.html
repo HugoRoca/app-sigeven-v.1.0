@@ -6,17 +6,71 @@
         <div class="panel-body">
             <form role="form" class="form-horizontal" novalidate name="frmVenta">
                 <div class="row">
-                    <div class="col-md-offset-6 col-md-6">
+                    <div class="col-md-offset-10 col-md-2">
                         <div class="form-group">
                             <label class="control-label col-md-3">Fecha: </label>
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                                 <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.fecha">
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Artículo: </label>
+                            <div class="col-md-8">
+                                <select class="form-control" ng-model="vm.Ventas.nArticulo" ng-change="vm.buscaPrecio()" id="cmbArticulos">
+                                    <option value="">--Seleccione--</option>
+                                    <option ng-repeat="item in vm.Articulo" value="{{item.Id}}">{{item.cDescripcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Precio: </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon">S/</span>
+                                    <input type="text" class="form-control text-right" ng-disabled="true" ng-model="vm.Ventas.nPrecioVenta">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label col-md-5">Cantidad: </label>
+                            <div class="col-md-7">
+                                <input type="number" class="form-control text-right" id="txtCantidad" ng-model="vm.Ventas.nCantidad" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="col-md-11">
+                                <p>
+                                    <button type="button" class="btn btn-primary btn-block" ng-click="vm.agregaFila()">
+                                        <span class="fa fa-plus"></span> Agregar</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
+            <div class="table-responsive" id="tblVentas">
+                <table class="table table table-hover table-bordered ">
+                    <thead>
+                        <th>ID</th>
+                        <th>Artículo</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

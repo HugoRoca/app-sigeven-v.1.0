@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="Content/loading-bar.css">
   <link rel="stylesheet" href="Content/style.css">
   <link rel="stylesheet" href="Content/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="Content/bootstrap-select.css">
   <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
 </head>
 
@@ -30,8 +31,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <img src="content/img/favicon.ico" alt="" width="30" style="margin-top:-5px">
-            SIGEVEN
+            <img src="content/img/favicon.ico" alt="" width="30" style="margin-top:-5px"> SIGEVEN
           </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,7 +41,7 @@
                 <span class="fa fa-info-circle"></span> Ayuda</a>
             </li>
             <li>
-              <a href="" >
+              <a href="">
                 <span class="fa fa-compass"></span> ¿Estas perdido?</a>
             </li>
           </ul>
@@ -59,6 +59,7 @@
   <script src="Scripts/bootbox.js"></script>
   <script src="Scripts/jquery-ui.js"></script>
   <script src="Scripts/bootstrap-datepicker.js"></script>
+  <script src="Scripts/bootstrap-select.js"></script>
   <script src="Scripts/datepicker-es.js"></script>
   <script src="Scripts/jquery.mask.js"></script>
   <script src="Scripts/log.js"></script>
@@ -82,22 +83,6 @@
   <script src="App/private/portal/portal.controller.js"></script>
   <script src="App/private/articulo/articulo.controller.js"></script>
   <script src="App/private/venta/venta.controller.js"></script>
-
-  <script>
-    $(function () {
-        $('#txtFecha').mask('00/00/0000');
-
-        $("#txtFecha").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: 'dd/mm/yy',
-            yearRange: "-100:-17",
-            defaultDate: "-17y-m-d"
-        });
-
-    });
-</script>
-
 
 </body>
 

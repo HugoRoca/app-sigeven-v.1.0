@@ -58,6 +58,18 @@
       vm.tituloModal = 'Nuevo Artículo';
       var s = localStorageService.get('userToken');
       vm.user = s.userName;
+
+      cargaJQuery();
+
+    }
+
+    function cargaJQuery(){
+      $("#txtBuscar").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#tblArticulo tr").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
     }
 
     function llenaMarca() {
@@ -180,5 +192,6 @@
         }
       });
     }
+
   }
 })();
