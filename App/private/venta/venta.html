@@ -6,10 +6,10 @@
         <div class="panel-body" style="margin:10px">
             <form role="form" class="form-horizontal" novalidate name="frmVenta">
                 <div class="row">
-                    <div class="col-md-offset-10 col-md-2">
+                    <div class="col-md-5">
                         <div class="form-group">
                             <label class="control-label col-md-3">Fecha: </label>
-                            <div class="col-md-9">
+                            <div class="col-md-8">
                                 <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.fecha">
                             </div>
                         </div>
@@ -71,17 +71,43 @@
                     <tbody id="tblTbody">
                     </tbody>
                     <tfoot>
-                        <td colspan="4" class="text-right"><h4><b>Total:</b></h4> </td>
-                        <td class="text-right"><h4><b>{{vm.Ventas.nCantidadTotal}}</b></h4></td>
-                        <td class="text-right"><h4><b>{{vm.Ventas.nTotalVenta | currency:'S/'}}</b></h4></td>
+                        <td colspan="4" class="text-right">
+                            <h4>
+                                <b>Total:</b>
+                            </h4>
+                        </td>
+                        <td class="text-right">
+                            <h4>
+                                <b>{{vm.Ventas.nCantidadTotal}}</b>
+                            </h4>
+                        </td>
+                        <td class="text-right">
+                            <h4>
+                                <b>{{vm.Ventas.nTotalVenta | currency:'S/'}}</b>
+                            </h4>
+                        </td>
                     </tfoot>
                 </table>
             </div>
             <div class="row">
-                <p class="text-right">
-                    <button class="btn btn-danger" id="btnEliminar" ng-click="vm.eliminarFila()">
-                        <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
-                </p>
+                <div class="col-md-offset-3 col-md-3">
+                    <p class="text-right">
+                        <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
+                            <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right">
+                        <a class="btn btn-warning btn-block" ui-sref="portal" ui-sref-activate="activate">
+                            <span class="fa fa-caret-square-o-left"></span> Regresar</a>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right">
+                        <button class="btn btn-success btn-block" id="btnEliminar" type="button" ng-click="vm.insertarVenta()">
+                            <span class="fa fa-save"></span> Registrar Venta</button>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
