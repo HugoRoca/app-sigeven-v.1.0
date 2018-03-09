@@ -44,8 +44,6 @@
         changeMonth: true,
         changeYear: true,
         dateFormat: 'dd/mm/yy',
-        yearRange: "-100:-17",
-        defaultDate: "-17y-m-d"
       });
 
 

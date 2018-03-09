@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.1.30-MariaDB : Database - dbventas
+MySQL - 5.5.24-log : Database - dbventas
 *********************************************************************
 */
 
@@ -38,7 +38,11 @@ CREATE TABLE `articulo` (
 
 /*Data for the table `articulo` */
 
+LOCK TABLES `articulo` WRITE;
+
 insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'POET',10,1,2,1.2,1.7,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:12:07'),(2,'Cepillo',10,2,1,0.9,1,1,'','0000-00-00 00:00:00',NULL,NULL),(3,'Pega Mosca',10,4,3,0.7,1,1,'','0000-00-00 00:00:00',NULL,NULL),(4,'probando',40,2,4,1.2,1.58,0,'','0000-00-00 00:00:00',NULL,NULL),(5,'dento 75ml',7,2,4,2,2.5,1,'','0000-00-00 00:00:00',NULL,NULL),(6,'colgate 125ml',5,1,2,2.3,2.8,1,'','0000-00-00 00:00:00',NULL,NULL),(7,'DENTO 125ML',15,5,4,1.9,2.9,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:06:42'),(8,'ganchos de ropa (plÃ¡stico)',6,2,1,2,2.5,1,'hroca','2018-03-07 17:07:35',NULL,NULL),(9,'gancho de ropa (madera)',6,1,2,2,2.5,1,'hroca','2018-03-07 17:10:51',NULL,NULL);
+
+UNLOCK TABLES;
 
 /*Table structure for table `articuloimagen` */
 
@@ -56,6 +60,10 @@ CREATE TABLE `articuloimagen` (
 
 /*Data for the table `articuloimagen` */
 
+LOCK TABLES `articuloimagen` WRITE;
+
+UNLOCK TABLES;
+
 /*Table structure for table `catalogocodigo` */
 
 DROP TABLE IF EXISTS `catalogocodigo`;
@@ -69,7 +77,11 @@ CREATE TABLE `catalogocodigo` (
 
 /*Data for the table `catalogocodigo` */
 
+LOCK TABLES `catalogocodigo` WRITE;
+
 insert  into `catalogocodigo`(`Id`,`cNomCod`,`cValor`,`nEstado`) values (1000,'TIPO PRODUCTOS','1000',1),(1000,'LIQUIDO','1',1),(1000,'SOLIDO','2',1),(1000,'VENENO','3',1),(1000,'DETERGENTES','4',1),(1000,'ASEO','5',1),(2000,'MARCAS','2000',1),(2000,'SAPOLIO','1',1),(2000,'POET','2',1),(2000,'RAIDMAX','3',1),(2000,'AYUDIN','4',1);
+
+UNLOCK TABLES;
 
 /*Table structure for table `usuario` */
 
@@ -85,7 +97,11 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
+LOCK TABLES `usuario` WRITE;
+
 insert  into `usuario`(`Id`,`cNomUsu`,`cContrasenia`,`cNombres`) values (1,'hroca','ventas2018','Hugo Antonio Roca Espinoza'),(2,'jchavez','ventas2018',NULL);
+
+UNLOCK TABLES;
 
 /*Table structure for table `venta` */
 
@@ -103,6 +119,10 @@ CREATE TABLE `venta` (
 
 /*Data for the table `venta` */
 
+LOCK TABLES `venta` WRITE;
+
+UNLOCK TABLES;
+
 /*Table structure for table `ventadetalle` */
 
 DROP TABLE IF EXISTS `ventadetalle`;
@@ -119,6 +139,10 @@ CREATE TABLE `ventadetalle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `ventadetalle` */
+
+LOCK TABLES `ventadetalle` WRITE;
+
+UNLOCK TABLES;
 
 /* Procedure structure for procedure `Articulo_Actualiza_SP` */
 
@@ -276,6 +300,41 @@ DELIMITER $$
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Usuario_Validar_SP`(IN cUsuario VARCHAR(20), IN cPassword VARCHAR(30))
 BEGIN
 SELECT * FROM usuario WHERE cNomUsu = cUsuario AND cContrasenia = cPassword;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `Venta_Insertar_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Venta_Insertar_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Venta_Insertar_SP`(
+  IN dFechaReg date,
+  in cUsu varchar(50),
+  in nId int,
+  in nCant int
+)
+BEGIN
+	set @nPrecioVenta = (select nPrecioVenta from articulo where Id = nId);
+	set @nTotal = round(nCant * @nPrecioVenta,2);
+	set @nContador = (select count(*) from venta where dFecha = dFechaReg);
+	if @nContador = 0 then
+		insert into venta(dFecha, nCantidad, nTotal, cUsuReg, dFechaReg) values(dFechaReg, nCant, @nTotal, cUsu, now());
+	else
+		set @nTotal = round((select nTotal from venta where dFecha = dFechaReg) + @nTotal, 2);
+		SET @nCantidad = (SELECT nCantidad FROM venta WHERE dFecha = dFechaReg) + nCant;		
+		
+		update venta set nCantidad = @nCantidad, nTotal = @nTotal where dFecha = dFechaReg;
+	end if;	
+	
+	set @nVenta = (select Id from venta where dFecha = dFechaReg);
+	
+	insert into ventadetalle(nIdVenta, nIdArticulo, nCantidad, nPrecio, cUsuReg, dFechaReg)
+	values (@nVenta, nId, nCant, @nPrecioVenta, cUsu, now());
+	
+	update articulo set nStock = nStock - nCant where Id = nId;	
+	
 END */$$
 DELIMITER ;
 
