@@ -71,7 +71,11 @@
                     <tbody id="tblTbody">
                     </tbody>
                     <tfoot>
-                        <td colspan="4" class="text-right">
+                        <td>
+                            <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
+                                <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                        </td>
+                        <td colspan="3" class="text-right">
                             <h4>
                                 <b>Total:</b>
                             </h4>
@@ -90,15 +94,9 @@
                 </table>
             </div>
             <div class="row">
-                <div class="col-md-offset-3 col-md-3">
-                    <p class="text-right">
-                        <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
-                            <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <p class="text-right">
-                        <a class="btn btn-warning btn-block" ui-sref="portal" ui-sref-activate="activate">
+                <div class="col-md-offset-6 col-md-3">
+                    <p>
+                        <a class="btn btn-danger btn-block" ui-sref="portal" ui-sref-activate="activate">
                             <span class="fa fa-caret-square-o-left"></span> Regresar</a>
                     </p>
                 </div>

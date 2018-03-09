@@ -126,6 +126,7 @@
               $(this).parents("tr").remove();
             }
           });
+          toastr.success('Los artículos fueron eliminados de la lista.', 'Eliminación');
         }
       });
     }
