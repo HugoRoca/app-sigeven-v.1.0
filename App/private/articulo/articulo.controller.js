@@ -63,7 +63,8 @@
 
     }
 
-    function cargaJQuery(){
+    function cargaJQuery() {
+
       $("#txtBuscar").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#tblArticulo tr").filter(function () {

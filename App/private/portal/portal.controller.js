@@ -10,10 +10,10 @@
   function portalController(configService, authenticationService, localStorageService, dataService, toastr, $state) {
     var vm = this;
 
-    vm.singOut = singOut;
+    init();
 
-    function singOut() {
-      authenticationService.logout();
+    function init(){
+      console.log('portal');
     }
 
   }

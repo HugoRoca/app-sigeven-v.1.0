@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>.::. SIGEVEN .::. GESTION DE VENTAS</title>
+  <link rel="stylesheet" href="Content/bootstrap.css">
+  <link rel="stylesheet" href="Content/admin/sb-admin-2.css">
+
+  <link rel="stylesheet" href="Content/angular-toastr.css">
+  <link rel="stylesheet" href="Content/font-awesome.css">
+  <link rel="stylesheet" href="Content/loading-bar.css">
+  <link rel="stylesheet" href="Content/style.css">
+
+  <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body ng-controller="loginController as vm">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Login</h3>
+          </div>
+          <div class="panel-body">
+            <img src="Content/img/limpieza3.png" alt="logo" class="img-responsive" style="margin: 0 auto !important;">
+            <p>&nbsp;</p>
+            <form role="form" name="frmLogin" ng-submit="vm.login(frmLogin.$valid)" novalidate>
+              <fieldset>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Usuario..." name="user" type="text" autofocus ng-model="vm.usuario.cUsuario" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Password" name="password" type="password" ng-model="vm.usuario.cContrasenia" required>
+                </div>
+                <!-- Change this to a button or input when using this as a form -->
+                <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Scripts/angular.js"></script>
+  <script src="Scripts/jquery.js"></script>
+  <script src="Scripts/bootstrap.js"></script>
+  <script src="Scripts/bootbox.js"></script>
+  <script src="Scripts/jquery.mask.js"></script>
+  <script src="Scripts/log.js"></script>
+  <script src="Scripts/modules/angular-animate.js"></script>
+  <script src="Scripts/modules/angular-file-upload.js"></script>
+  <script src="Scripts/modules/angular-local-storage.js"></script>
+  <script src="Scripts/modules/angular-toastr.js"></script>
+  <script src="Scripts/modules/angular-ui-router.js"></script>
+  <script src="Scripts/modules/loading-bar.js"></script>
+  <script src="Scripts/modules/ui-bootstrap-tpls.js"></script>
+  <script src="Scripts/utils.js"></script>
+  <!-- scripts funcionamiento -->
+  <script src="App/app.js"></script>
+  <script src="App/shared/configuration.service.js"></script>
+  <script src="App/shared/data.service.js"></script>
+  <script src="App/shared/authentication.service.js"></script>
+  <script src="App/app.router.js"></script>
+  <script src="App/app.config.js"></script>
+  <script src="App/app.controller.js"></script>
+  <script src="App/login.controller.js"></script>
+  <script src="App/private/portal/portal.controller.js"></script>
+  <script src="App/private/articulo/articulo.controller.js"></script>
+  <script src="App/private/venta/venta.controller.js"></script>
+
+</body>
+
+</html>

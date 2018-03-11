@@ -5,9 +5,9 @@
 
   angular.module('app').controller('applicationController', applicationController);
 
-  applicationController.$inject = ['configService', 'authenticationService', 'localStorageService'];
+  applicationController.$inject = ['configService', 'authenticationService', 'localStorageService', '$state'];
 
-  function applicationController(configService, authenticationService, localStorageService) {
+  function applicationController(configService, authenticationService, localStorageService, $state) {
     var vm = this;
     vm.logueado = true;
 
@@ -16,7 +16,8 @@
     init();
 
     function init() {
-      if (!configService.getLogin()) return vm.logueado = false;
+      if (!configService.getLogin()) return location.href = 'login.html';
+      $state.go('portal');
     }
 
     function logout(){

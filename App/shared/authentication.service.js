@@ -29,7 +29,7 @@
           });
 
           configService.setLogin(true);
-          $state.go('portal');
+          location.href = 'index.html#!/portal';
           toastr.success('Has ingresado correctamente al sistema.', 'BIENVENIDO');
 
         } else {
@@ -45,7 +45,7 @@
       //$http.defaults.headers.common.Authorization = '';
       localStorageService.remove('userToken');
       configService.setLogin(false);
-      $state.go('inicio');
+      location.href = 'login.html';
     }
 
     function errorValida(error) {

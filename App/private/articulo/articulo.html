@@ -13,13 +13,14 @@
           <label class="control-label">Buscar: </label>
           <input type="text" class="form-control" id="txtBuscar" placeholder="Buscar...">
         </div>
+
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Articulo">
           <span class="fa fa-plus"></span> Nuevo artículo
         </button>
       </form>
       <p>&nbsp;</p>
       <div class="table-responsive">
-        <table class="table table-hover table-bordered " id="tblArticulo">
+        <table class="table table-striped table-bordered table-hover" id="tblArticulo">
           <thead>
             <tr>
               <th>ID</th>
@@ -34,7 +35,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="item in vm.lista">
+            <tr ng-repeat="item in vm.lista" ng-class="{'danger': item.nStock <= 2, 'warning' : item.nStock == 3 || item.nStock == 4}">
               <td class="text-right">{{item.Id}}</td>
               <td>{{item.cDescripcion}}</td>
               <td class="text-right">{{item.nStock}}</td>

@@ -26,7 +26,8 @@
     } else {
       //$state.go('home');
       configService.setLogin(false);
-      $state.go('inicio');
+      // location.href = 'login.html';
+      // $state.go('inicio');
     }
 
   }

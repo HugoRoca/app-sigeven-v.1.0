@@ -19,7 +19,7 @@
     init();
 
     function init() {
-      if (configService.getLogin()) return $state.go('portal');
+      if (configService.getLogin()) return location.href = 'index.html#!/portal';;
     }
 
     function login(val) {
