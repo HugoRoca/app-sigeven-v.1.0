@@ -43,14 +43,6 @@
 
     function loadjQuery() {
       $('#txtFecha').mask('00/00/0000');
-
-      $("#txtFecha").datepicker({
-        changeMonth: true,
-        changeYear: true,
-        dateFormat: 'dd/mm/yy',
-      });
-
-
     }
 
     function buscaPrecio() {
@@ -134,6 +126,7 @@
     function insertarVenta() {
       if (vm.fecha == '') return toastr.warning('Debe de seleccionar una fecha', 'Validación');
       if (vm.Ventas.nCantidadTotal <= 0) return toastr.warning('Debe de agregar artículos.', 'Validación');
+      console.log(vm.fecha);
       bootbox.confirm("¿Desea continuar?", function (result) {
         if (result) {
           var fecha = vm.fecha.split('/');
@@ -151,6 +144,7 @@
           });
 
           dataService.postData('Server/venta_insertar.php', ventaArray).then(function (data) {
+            console.log(data);
             if (data.data == 'ok') {
               toastr.success('Datos registrados correctamente!', 'Registro');
               $state.go('portal');

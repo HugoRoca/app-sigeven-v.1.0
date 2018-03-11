@@ -1,148 +1,97 @@
 <div ng-controller="portalController as vm">
-  <div class="well">
-    <h3>Top 5 artículos mas vendidos</h3>
-    <table class="table table table-hover table-bordered ">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Descripción</th>
-          <th>Precio</th>
-          <th>Tipo</th>
-          <th>Marca</th>
-          <th>Total Vendidos</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Ariel 500g</td>
-          <td>S/ 5.50</td>
-          <td>Detergente</td>
-          <td>Ariel</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Ariel 500g</td>
-          <td>S/ 5.50</td>
-          <td>Detergente</td>
-          <td>Ariel</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Ariel 500g</td>
-          <td>S/ 5.50</td>
-          <td>Detergente</td>
-          <td>Ariel</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Ariel 500g</td>
-          <td>S/ 5.50</td>
-          <td>Detergente</td>
-          <td>Ariel</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Ariel 500g</td>
-          <td>S/ 5.50</td>
-          <td>Detergente</td>
-          <td>Ariel</td>
-          <td>5</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-md-10">
-    <div class="page-header">
-      <h1>Menú Principal</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="thumbnail tile tile-medium tile-blue" ui-sref="articulo" ui-sref-active="active">
-        <a href="" class="fa-links">
-          <h1>Artículos</h1>
-          <i class="fa fa-3x fa-cart-plus"></i>
-        </a>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Dashboard</h1>
+        </div>
       </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">26</div>
+                            <div>New Comments!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tasks fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">12</div>
+                            <div>New Tasks!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">124</div>
+                            <div>New Orders!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-support fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">13</div>
+                            <div>Support Tickets!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
-      <div class="thumbnail tile tile-medium tile-orange" ui-sref="venta" ui-sref-active="active">
-        <a href="#" class="fa-links">
-          <h1>Ventas</h1>
-          <i class="fa fa-3x fa-shopping-basket"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="thumbnail tile tile-medium tile-green">
-        <a href="#" class="fa-links">
-          <h1>Proveedores</h1>
-          <i class="fa fa-3x fa-bus"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="thumbnail tile tile-medium tile-pomegranate">
-        <a href="#" class="fa-links">
-          <h1>Gastos</h1>
-          <i class="fa fa-3x fa-money"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <div class="thumbnail tile tile-medium tile-purple">
-        <a href="#" class="fa-links">
-          <h1>Stock</h1>
-          <i class="fa fa-3x fa-money"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="thumbnail tile tile-medium tile-wet-asphalt">
-        <a href="#" class="fa-links">
-          <h1>Ventas</h1>
-          <i class="fa fa-3x fa-cart-plus"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="thumbnail tile tile-medium tile-silver">
-        <a href="#" class="fa-links">
-          <h1>Pedidos</h1>
-          <i class="fa fa-3x fa-shopping-basket"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="thumbnail tile tile-medium tile-lime">
-        <a href="#" class="fa-links">
-          <h1>Gastos</h1>
-          <i class="fa fa-3x fa-frown-o"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="thumbnail tile tile-medium tile-wisteria">
-        <a href="#" class="fa-links">
-          <h1>Otros</h1>
-          <i class="fa fa-3x fa-bus"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="thumbnail tile tile-medium tile-red" ng-click="vm.singOut()">
-        <a href="" class="fa-links">
-          <h1>Salir</h1>
-          <i class="fa fa-3x fa-sign-out"></i>
-        </a>
-      </div>
-    </div>
-  </div>
 </div>

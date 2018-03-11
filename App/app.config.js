@@ -19,11 +19,14 @@
 
     var user = localStorageService.get('userToken');
     if (user && user.token != '') {
-      $http.defaults.headers.common.Authorization = 'Bearer ' + user.token;
+      //$http.defaults.headers.common.Authorization = 'Bearer ' + user.token;
+
       configService.setLogin(true);
+      $state.go('portal');
     } else {
       //$state.go('home');
       configService.setLogin(false);
+      $state.go('inicio');
     }
 
   }

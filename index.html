@@ -6,49 +6,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>.::. SIGEVEN .::. GESTION DE VENTAS</title>
-  <link rel="stylesheet" href="Content/metro-bootstrap.css">
+  <link rel="stylesheet" href="Content/bootstrap.css">
+  <link rel="stylesheet" href="Content/admin/metisMenu.min.css">
+  <link rel="stylesheet" href="Content/admin/sb-admin-2.css">
+  <link rel="stylesheet" href="Content/admin/morris.css">
+  <link rel="stylesheet" href="Content/admin/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="Content/admin/dataTables.responsive.css">
+
   <link rel="stylesheet" href="Content/angular-toastr.css">
-  <link rel="stylesheet" href="Content/calendar.css">
   <link rel="stylesheet" href="Content/font-awesome.css">
-  <link rel="stylesheet" href="Content/jquery-ui.css">
   <link rel="stylesheet" href="Content/loading-bar.css">
   <link rel="stylesheet" href="Content/style.css">
-  <link rel="stylesheet" href="Content/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="Content/bootstrap-select.css">
+
   <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body ng-controller="applicationController as vm">
-  <div class="content">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <img src="content/img/favicon.ico" alt="" width="30" style="margin-top:-5px"> SIGEVEN
+
+  <div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">SIGEVEN - Gestión de ventas</a>
+      </div>
+
+      <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white !important;">
+            <i class="fa fa-user fa-fw"></i>
+            <i class="fa fa-caret-down"></i>
           </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="dropdown-menu dropdown-user">
             <li>
-              <a href="#">
-                <span class="fa fa-info-circle"></span> Ayuda</a>
+              <a href="" ng-click="vm.logout()">
+                <i class="fa fa-sign-out fa-fw"></i> Salir</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+          <ul class="nav" id="side-menu">
+            <li class="sidebar-search">
+              <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+              <!-- /input-group -->
             </li>
             <li>
-              <a href="">
-                <span class="fa fa-compass"></span> ¿Estas perdido?</a>
+              <a href="" ui-sref="portal" ui-sref-active="active">
+                <i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="" ui-sref="articulo" ui-sref-active="active">
+                <i class="fa fa-cart-plus fa-fw"></i> Artículo</a>
+            </li>
+            <li>
+              <a href="index.html">
+                <i class="fa fa-money fa-fw"></i> Gastos</a>
+            </li>
+            <li>
+              <a href="index.html">
+                <i class="fa fa-bus fa-fw"></i> Proveedor</a>
+            </li>
+            <li>
+              <a href="" ui-sref="venta" ui-sref-active="active">
+                <i class="fa fa-shopping-basket fa-fw"></i> Venta</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Consultas
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level">
+                <li>
+                  <a href="flot.html">Stock</a>
+                </li>
+                <li>
+                  <a href="morris.html">Ventas</a>
+                </li>
+                <li>
+                  <a href="morris.html">Pedidos</a>
+                </li>
+                <li>
+                  <a href="morris.html">Gastos</a>
+                </li>
+              </ul>
+              <!-- /.nav-second-level -->
+            </li>
+            <li>
+              <a href="index.html">
+                <i class="fa fa-table fa-fw"></i> Otros<span class="fa arrow"></span></a>
+              
+              <ul class="nav nav-second-level">
+                <li>
+                  <a href="flot.html">Marca</a>
+                </li>
+                <li>
+                  <a href="flot.html">Tipo</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div id="page-wrapper">
       <div ui-view></div>
     </div>
   </div>
@@ -57,10 +131,14 @@
   <script src="Scripts/jquery.js"></script>
   <script src="Scripts/bootstrap.js"></script>
   <script src="Scripts/bootbox.js"></script>
-  <script src="Scripts/jquery-ui.js"></script>
-  <script src="Scripts/bootstrap-datepicker.js"></script>
-  <script src="Scripts/bootstrap-select.js"></script>
-  <script src="Scripts/datepicker-es.js"></script>
+  <script src="Scripts/admin/metisMenu.js"></script>
+  <script src="Scripts/admin/raphael.js"></script>
+  <script src="Scripts/admin/morris.js"></script>
+  <script src="Scripts/admin/jquery.dataTables.js"></script>
+  <script src="Scripts/admin/dataTables.bootstrap.js"></script>
+  <script src="Scripts/admin/dataTables.responsive.js"></script>
+  <script src="Scripts/admin/morris-data.js"></script>
+  <script src="Scripts/admin/sb-admin-2.js"></script>
   <script src="Scripts/jquery.mask.js"></script>
   <script src="Scripts/log.js"></script>
   <script src="Scripts/modules/angular-animate.js"></script>
@@ -79,6 +157,7 @@
   <script src="App/app.router.js"></script>
   <script src="App/app.config.js"></script>
   <script src="App/app.controller.js"></script>
+  <script src="App/public/inicio/inicio.controller.js"></script>
   <script src="App/public/login/login.controller.js"></script>
   <script src="App/private/portal/portal.controller.js"></script>
   <script src="App/private/articulo/articulo.controller.js"></script>
