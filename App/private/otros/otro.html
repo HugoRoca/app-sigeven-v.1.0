@@ -1,0 +1,138 @@
+<div ng-controller="otrosController as vm">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Otros</h1>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Otros
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-horizontal" novalidate role="form" novalidate>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Clase:</label>
+                                    <div class="col-md-8">
+                                        <select class="form-control" ng-model="vm.Otros.nId">
+                                            <option value="">--Seleccione--</option>
+                                            <option value="1000">Tipo</option>
+                                            <option value="2000">Marca</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Descripción:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" ng-model="vm.Otros.cDescripcion" autofocus autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3"></label>
+                                    <div class="col-md-8">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" ng-model="vm.Otros.nEstado">Activado
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-right">
+                                    <button type="button" class="btn btn-success btn-block">
+                                        <span class="fa fa-plus"></span> Nuevo</button>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    <button type="button" class="btn btn-primary btn-block">
+                                        <span class="fa fa-save"></span> Guardar</button>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="" data-target="#Tipo" data-toggle="tab">Tipo</a>
+                        </li>
+                        <li>
+                            <a href="" data-target="#Marca" data-toggle="tab">Marca</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="Tipo">
+                            <h4>Tipo</h4>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Descripción</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in vm.Tipos">
+                                            <td>{{item.cNomCod}}</td>
+                                            <td>
+                                                <span class="label" ng-class="{'item.nEstado == 0':'label-danger', 'item.nEstado == 1' : 'label-success'}">
+                                                    {{(item.nEstado ? 'Activo':'Desactivado')}}</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-block" ng-click="vm.editar(item.Id, item.cNomCod, item.cValor, item.nEstado)">
+                                                    <span class="fa fa-pencil"></span> Editar</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Marca">
+                            <h4>Marca</h4>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Descripción</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in vm.Marca">
+                                            <td>{{item.cNomCod}}</td>
+                                            <td>
+                                                <span class="label " ng-class="{'item.nEstado == 0':'label-danger', 'item.nEstado == 1' : 'label-success'}">
+                                                    {{(item.nEstado ? 'Activo':'Desactivado')}}</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-block" ng-click="vm.editar(item.Id, item.cNomCod, item.cValor, item.nEstado)">
+                                                    <span class="fa fa-pencil"></span> Editar</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

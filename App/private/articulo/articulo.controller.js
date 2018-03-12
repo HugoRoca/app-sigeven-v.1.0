@@ -76,7 +76,7 @@
 
     function llenaMarca() {
       dataService.postData('Server/catalogoCodigo_Lista.php', {
-        Id: 2000
+        Id: 2000, nTip:1
       }).then(function (marca) {
         vm.Marca = marca.data;
       }, function (error) {
@@ -86,7 +86,7 @@
 
     function llenaTipo() {
       dataService.postData('Server/catalogoCodigo_Lista.php', {
-        Id: 1000
+        Id: 1000, nTip:1
       }).then(function (tipo) {
         vm.Tipos = tipo.data
       }, function (error) {
