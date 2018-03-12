@@ -103,22 +103,10 @@
                   <a href="morris.html">Gastos</a>
                 </li>
               </ul>
-              <!-- /.nav-second-level -->
             </li>
             <li>
-              <a href="index.html">
-                <i class="fa fa-table fa-fw"></i> Otros
-                <span class="fa arrow"></span>
-              </a>
-
-              <ul class="nav nav-second-level">
-                <li>
-                  <a href="flot.html">Marca</a>
-                </li>
-                <li>
-                  <a href="flot.html">Tipo</a>
-                </li>
-              </ul>
+              <a href="" ui-sref="venta" ui-sref-active="active">
+                <i class="fa fa-table fa-fw"></i> Otros</a>
             </li>
           </ul>
         </div>
@@ -173,6 +161,13 @@
   <script src="App/private/venta/venta.controller.js"></script>
   <script src="App/private/gasto/gasto.controller.js"></script>
 
+  <script>
+    $(document).on('click', '.navbar-collapse.in', function (e) {
+      if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+        $(this).collapse('hide');
+      }
+    });
+  </script>
 </body>
 
 </html>

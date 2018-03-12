@@ -127,7 +127,7 @@
     function insertarVenta() {
       if (vm.fecha == '') return toastr.warning('Debe de seleccionar una fecha', 'Validación');
       if (vm.Ventas.nCantidadTotal <= 0) return toastr.warning('Debe de agregar artículos.', 'Validación');
-      console.log(vm.fecha);
+
       bootbox.confirm("¿Desea continuar?", function (result) {
         if (result) {
           var fecha = vm.fecha.split('/');
