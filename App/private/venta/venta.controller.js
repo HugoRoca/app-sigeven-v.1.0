@@ -33,6 +33,7 @@
     ////////////////
 
     function activate() {
+      authenticationService.validarSesion();
       var s = localStorageService.get('userToken');
       vm.user = s.userName;
       loadjQuery();

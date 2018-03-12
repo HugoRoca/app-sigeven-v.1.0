@@ -52,6 +52,7 @@
     ////////////////
 
     function activate() {
+      authenticationService.validarSesion();
       llenaArticulo();
       llenaMarca();
       llenaTipo();

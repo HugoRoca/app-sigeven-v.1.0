@@ -12,6 +12,7 @@
     service.login = login;
     service.logout = logout;
     service.errorValida = errorValida;
+    service.validarSesion = validarSesion;
 
     return service;
 
@@ -23,7 +24,7 @@
         //$http.defaults.headers.common.Authorization = 'Bearer ' + result.data.access_token;
         if (data.data.length > 0) {
           localStorageService.set('userToken', {
-            //token: result.data.access_token,
+            token: 'aqui va un token', //result.data.access_token,
             userName: data.data[0].cNomUsu,
             id: data.data[0].Id
           });
@@ -63,6 +64,15 @@
         logout();
       }
       pintaConsola();
+    }
+
+    function validarSesion() {
+      var user = localStorageService.get('userToken');
+      if (!user) {
+        logout();
+      } else {
+        return true;
+      }
     }
 
 
