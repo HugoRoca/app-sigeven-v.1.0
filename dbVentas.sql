@@ -34,13 +34,13 @@ CREATE TABLE `articulo` (
   `cUserAct` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   `dFechaAct` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 /*Data for the table `articulo` */
 
 LOCK TABLES `articulo` WRITE;
 
-insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'POET',10,1,2,1.2,1.7,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:12:07'),(2,'Cepillo',10,2,1,0.9,1,1,'','0000-00-00 00:00:00',NULL,NULL),(3,'Pega Mosca',10,4,3,0.7,1,1,'','0000-00-00 00:00:00',NULL,NULL),(4,'probando',40,2,4,1.2,1.58,0,'','0000-00-00 00:00:00',NULL,NULL),(5,'dento 75ml',7,2,4,2,2.5,1,'','0000-00-00 00:00:00',NULL,NULL),(6,'colgate 125ml',5,1,2,2.3,2.8,1,'','0000-00-00 00:00:00',NULL,NULL),(7,'DENTO 125ML',15,5,4,1.9,2.9,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:06:42'),(8,'ganchos de ropa (plÃ¡stico)',6,2,1,2,2.5,1,'hroca','2018-03-07 17:07:35',NULL,NULL),(9,'gancho de ropa (madera)',6,1,2,2,2.5,1,'hroca','2018-03-07 17:10:51',NULL,NULL);
+insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'POET',2,1,2,1.2,1.7,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:12:07'),(2,'Cepillo',5,2,1,0.9,1,1,'','0000-00-00 00:00:00',NULL,NULL),(3,'Pega Mosca',5,4,3,0.7,1,1,'','0000-00-00 00:00:00',NULL,NULL),(4,'probando',40,2,4,1.2,1.58,0,'','0000-00-00 00:00:00',NULL,NULL),(5,'dento 75ml',5,2,4,2,2.5,1,'','0000-00-00 00:00:00',NULL,NULL),(6,'colgate 125ml',3,1,2,2.3,2.8,1,'','0000-00-00 00:00:00',NULL,NULL),(7,'DENTO 125ML',15,5,4,1.9,2.9,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:06:42'),(8,'ganchos de ropa (plastico)',2,2,1,2,2.5,1,'hroca','2018-03-07 17:07:35',NULL,NULL),(9,'gancho de ropa (madera)',5,1,2,2,2.5,1,'hroca','2018-03-07 17:10:51','hroca','2018-03-11 17:45:59'),(10,'Escoba Clorinda chica',2,3,4,4.6,5,1,'hroca','2018-03-11 17:25:14','hroca','2018-03-11 18:24:23');
 
 UNLOCK TABLES;
 
@@ -115,11 +115,13 @@ CREATE TABLE `venta` (
   `cUsuReg` varchar(50) NOT NULL,
   `dFechaReg` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `venta` */
 
 LOCK TABLES `venta` WRITE;
+
+insert  into `venta`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-10',26,43.3,'hroca','2018-03-10 11:37:46'),(2,'2018-03-09',8,17.6,'hroca','2018-03-10 11:57:03'),(3,'2018-03-11',6,17,'hroca','2018-03-11 17:26:46');
 
 UNLOCK TABLES;
 
@@ -132,6 +134,8 @@ CREATE TABLE `ventadetalle` (
   `nIdArticulo` int(11) NOT NULL,
   `nCantidad` int(11) NOT NULL,
   `nPrecio` double NOT NULL,
+  `cUsuReg` varchar(50) NOT NULL,
+  `dFechaReg` datetime NOT NULL,
   KEY `venta` (`nIdVenta`),
   KEY `articulo` (`nIdArticulo`),
   CONSTRAINT `articulo` FOREIGN KEY (`nIdArticulo`) REFERENCES `articulo` (`Id`),
@@ -141,6 +145,8 @@ CREATE TABLE `ventadetalle` (
 /*Data for the table `ventadetalle` */
 
 LOCK TABLES `ventadetalle` WRITE;
+
+insert  into `ventadetalle`(`nIdVenta`,`nIdArticulo`,`nCantidad`,`nPrecio`,`cUsuReg`,`dFechaReg`) values (1,2,1,1,'hroca','2018-03-10 11:45:00'),(1,8,1,2.5,'hroca','2018-03-10 11:45:00'),(1,9,1,2.5,'hroca','2018-03-10 11:45:00'),(1,1,5,1.7,'hroca','2018-03-10 11:52:23'),(1,2,2,1,'hroca','2018-03-10 11:52:23'),(1,3,5,1,'hroca','2018-03-10 11:52:23'),(1,5,2,2.5,'hroca','2018-03-10 11:52:24'),(1,6,2,2.8,'hroca','2018-03-10 11:52:24'),(2,1,1,1.7,'hroca','2018-03-10 11:57:03'),(2,9,2,2.5,'hroca','2018-03-10 11:57:03'),(2,8,3,2.5,'hroca','2018-03-10 11:57:03'),(3,10,2,5,'hroca','2018-03-11 17:26:46'),(3,2,2,1,'hroca','2018-03-11 17:26:46'),(3,9,2,2.5,'hroca','2018-03-11 17:26:47'),(2,1,2,1.7,'hroca','2018-03-11 22:59:44');
 
 UNLOCK TABLES;
 
@@ -233,6 +239,28 @@ BEGIN
       cUser,
       now()
     ) ;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `Articulo_ListaMasVendidos_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Articulo_ListaMasVendidos_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Articulo_ListaMasVendidos_SP`()
+BEGIN
+  SELECT 
+    concat(' - ',a.`cDescripcion`) label,
+    SUM(ncantidad) as `data`
+  FROM
+    ventadetalle v 
+    INNER JOIN articulo a 
+      ON v.`nIdArticulo` = a.`Id` 
+  GROUP BY nIdArticulo,
+    cDescripcion 
+  ORDER BY `data` DESC 
+  LIMIT 5 ;
 END */$$
 DELIMITER ;
 
