@@ -9,6 +9,16 @@
             $this->db = DB();
         }
 
+        public function listaPorSemana(){
+            $query = $this->db->prepare("call Ventas_ListaPorSemana_SP");
+            $query->execute();
+            $data = array();
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+              $data[] = $row;
+            }
+            return json_encode($data);
+          }
+
         public function insertarVenta($datos){
             $valor = '';
             

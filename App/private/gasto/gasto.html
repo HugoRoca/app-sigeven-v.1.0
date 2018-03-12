@@ -1,0 +1,92 @@
+<div ng-controller="gastoController as vm">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Gastos</h1>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Gastos
+        </div>
+        <div class="panel-body" style="margin:10px">
+                <form role="form" class="form-horizontal" novalidate name="frmVenta">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Fecha: </label>
+                                <div class="col-md-8">
+                                    <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.Gasto.dFecha">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Descripción gasto: </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" ng-model="vm.Gasto.cDescripcion" autofocus autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Monto: </label>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">S/</span>
+                                        <input type="text" class="form-control text-right" ng-model="vm.Gasto.nMonto" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <p>
+                                    <button type="button" class="btn btn-primary btn-block" ng-click="vm.agregaFila()">
+                                        <span class="fa fa-plus"></span> Agregar</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="table-responsive" id="tblGasto">
+                    <table class="table table table-hover table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>Seleccionar</th>
+                                <th>Descripción</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblTbody">
+                        </tbody>
+                        <tfoot>
+                            <td>
+                                <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
+                                    <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                            </td>
+                            <td class="text-right">
+                                <h4>
+                                    <b>{{vm.Gasto.nGastos}}</b>
+                                </h4>
+                            </td>
+                            <td class="text-right">
+                                <h4>
+                                    <b>{{vm.Gasto.nTotalGasto | currency:'S/'}}</b>
+                                </h4>
+                            </td>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-9 col-md-3">
+                        <p class="text-right">
+                            <button class="btn btn-success btn-block" id="btnEliminar" type="button" ng-click="vm.insertarGasto()">
+                                <span class="fa fa-save"></span> Registrar Gastos</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

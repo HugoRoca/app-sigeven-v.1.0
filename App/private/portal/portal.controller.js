@@ -13,14 +13,28 @@
     init();
 
     function init() {
-      console.log('portal');
-      lista();
+      listaTopArticulo();
+      listaTopVenta();
     }
 
-    function lista(){
+    function listaTopVenta(){
+      dataService.getData('Server/venta_listaPorSemana.php').then(function(data){
+        Morris.Bar({
+          element: 'ventaSemana',
+          data: data.data,
+          xkey: 'y',
+          ykeys: ['a', 'b'],
+          labels: ['Ventas', 'Gastos'],
+          hideHover: 'auto',
+          resize: true
+      });
+
+      }, function(error){console.log(error);});
+    }
+
+    function listaTopArticulo() {
       dataService.getData('Server/articulo_top.php').then(function (data) {
         var data = data.data;
-  console.log(data);
         var plotObj = $.plot($("#articulosMasVendidos"), data, {
           series: {
             pie: {
@@ -32,7 +46,7 @@
           },
           tooltip: true,
           tooltipOpts: {
-            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            content: "%p.0%, %s",
             shifts: {
               x: 50,
               y: 0
