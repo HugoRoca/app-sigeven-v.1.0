@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="proveedorController as vm">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Proveedor</h1>
@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Nombre Proveedor: </label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" maxlength="100" autofocus autocomplete="off">
+                                <input type="text" class="form-control" maxlength="100" autofocus autocomplete="off" ng-model="vm.Proveedor.cNomProveedor">
                             </div>
                         </div>
                     </div>
@@ -37,9 +37,9 @@
                             <label class="control-label col-md-4">Artículo:</label>
                             <div class="col-md-8">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Buscar..." disabled>
+                                    <input type="text" class="form-control" placeholder="Buscar..." disabled ng-model="vm.Proveedor.cArticulo">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#ArticulosProveedor">
+                                        <button class="btn btn-default" type="button" ng-click="vm.llamaModal()">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-4">PxC:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control text-right">
+                                <input type="text" class="form-control text-right" ng-model="vm.Proveedor.nPrecioCompra">
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-4">PxV:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control text-right">
+                                <input type="text" class="form-control text-right" ng-model="vm.Proveedor.nPrecioVenta">
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-4">Cant.:</label>
                             <div class="col-md-8">
-                                <input type="number" class="form-control text-right">
+                                <input type="number" class="form-control text-right" id="txtCantidad" ng-model="vm.Proveedor.nCantidad">
                             </div>
                         </div>
                     </div>
@@ -75,11 +75,29 @@
                 <div class="row">
                     <div class="col-md-offset-10 col-md-2">
                         <p>
-                            <button class="btn btn-primary btn-block"><span class="fa fa-plus"></span> Agregar</button>
+                            <button class="btn btn-primary btn-block">
+                                <span class="fa fa-plus"></span> Agregar</button>
                         </p>
                     </div>
                 </div>
             </form>
+            <div class="table-responsive">
+                <table class="table table table-hover table-bordered " id="tblProveedor">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>Descripción</th>
+                            <th>PxC</th>
+                            <th>PxV</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -96,7 +114,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group custom-search-form">
-                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                        <input type="text" class="form-control" placeholder="Buscar..." id="txtBuscarArticulo">
                                         <span class="input-group-btn">
                                             <button class="btn btn-default" type="button">
                                                 <i class="fa fa-search"></i>
@@ -107,7 +125,7 @@
                             </div>
                             <hr>
                             <div class="table-responsive" style="height:150px">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table class="table table-striped table-bordered table-hover" id="tblArticuloProveedor">
                                     <thead>
                                         <tr>
                                             <th style="width:50px;"></th>
@@ -115,13 +133,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr ng-repeat="item in vm.Articulo">
                                             <td>
-                                                <button class="btn btn-danger">
+                                                <button class="btn btn-danger" ng-click="vm.seleccionaArticulo(item.Id, item.nPrecioVenta, item.cDescripcion, item.nStock, item.nPrecioCompra)">
                                                     <span class="fa fa-check"></span>
                                                 </button>
                                             </td>
-                                            <td>Perfumadores </td>
+                                            <td>{{item.cDescripcion}} </td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -25,6 +25,7 @@
         activate();
 
         function activate() {
+            authenticationService.validarSesion();
             vm.Otros.nId = '';
             vm.Otros.nEstado = true;
             llenaMarca();

@@ -52,7 +52,6 @@
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
-
     }
 
     function seleccionaArticulo(id, precio, descripcion, stock) {
