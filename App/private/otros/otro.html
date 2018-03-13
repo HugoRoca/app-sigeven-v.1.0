@@ -31,7 +31,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3">Descripción:</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" ng-model="vm.Otros.cDescripcion" autofocus autocomplete="off">
+                                        <input type="text" id="txtDescripcion" class="form-control" ng-model="vm.Otros.cDescripcion" autofocus autocomplete="off">
                                     </div>
                                 </div>
                             </div>
@@ -53,13 +53,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <p class="text-right">
-                                    <button type="button" class="btn btn-success btn-block">
+                                    <button type="button" class="btn btn-success btn-block" ng-click="vm.nuevo()">
                                         <span class="fa fa-plus"></span> Nuevo</button>
                                 </p>
                             </div>
                             <div class="col-md-6">
                                 <p>
-                                    <button type="button" class="btn btn-primary btn-block">
+                                    <button type="button" class="btn btn-primary btn-block" ng-click="vm.registrar()">
                                         <span class="fa fa-save"></span> Guardar</button>
                                 </p>
                             </div>
@@ -91,7 +91,7 @@
                                         <tr ng-repeat="item in vm.Tipos">
                                             <td>{{item.cNomCod}}</td>
                                             <td>
-                                                <span class="label" ng-class="{'item.nEstado == 0':'label-danger', 'item.nEstado == 1' : 'label-success'}">
+                                                <span class="label" ng-class="{'label-success':(item.nEstado==1), 'label-danger':(item.nEstado==0)}">
                                                     {{(item.nEstado ? 'Activo':'Desactivado')}}</span>
                                             </td>
                                             <td>
@@ -118,7 +118,7 @@
                                         <tr ng-repeat="item in vm.Marca">
                                             <td>{{item.cNomCod}}</td>
                                             <td>
-                                                <span class="label " ng-class="{'item.nEstado == 0':'label-danger', 'item.nEstado == 1' : 'label-success'}">
+                                                <span class="label" ng-class="{'label-success':(item.nEstado==1), 'label-danger':(item.nEstado==0)}">
                                                     {{(item.nEstado ? 'Activo':'Desactivado')}}</span>
                                             </td>
                                             <td>

@@ -21,6 +21,20 @@ class CatalogoCodigo{
 
     return json_encode($data);
   }
+
+  public function insertarCatalogoCodigo($nId, $cNom , $cVal, $nEst){
+    $valor = '';
+
+        $query = $this->db->prepare("call CatalogoCodigo_Insertar_SP(?, ?, ?, ?)");
+        $query->bindparam(1, $nId, PDO::PARAM_STR);
+        $query->bindparam(2, $cNom, PDO::PARAM_STR);
+        $query->bindparam(3, $cVal, PDO::PARAM_STR);
+        $query->bindparam(4, $nEst, PDO::PARAM_STR);
+        $query->execute();
+        $valor = 'ok';
+    
+    return $valor;
+}
 }
 
 ?>

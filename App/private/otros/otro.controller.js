@@ -20,6 +20,7 @@
 
         vm.registrar = registrar;
         vm.editar = editar;
+        vm.nuevo = nuevo;
 
         activate();
 
@@ -53,7 +54,23 @@
         }
 
         function registrar() {
-
+            if (vm.Otros.nId == 0) return toastr.warning('Falta seleccionar una clase.', 'Validación');
+            if (vm.Otros.cDescripcion == '') return toastr.warning('Debe de tener una descripción.', 'validación');
+            console.log(vm.Otros);
+            bootbox.confirm("¿Desea continuar?", function (result) {
+                if (result) {
+                    dataService.postData('Server/catalogoCodigo_insertar.php', {
+                        catalogo: vm.Otros
+                    }).then(function (data) {
+                        if (data.data == 'ok') toastr.success('Se registro correctamente.', 'Registro');
+                        llenaMarca();
+                        llenaTipo();
+                        nuevo();
+                    }, function (error) {
+                        console.log(error);
+                    });
+                }
+            });
         }
 
         function editar(id, desc, val, est) {
@@ -63,6 +80,16 @@
                 cDescripcion: desc,
                 nEstado: (est ? true : false)
             }
+        }
+
+        function nuevo() {
+            vm.Otros = {
+                nId: '',
+                cValor: 0,
+                cDescripcion: '',
+                nEstado: true
+            }
+            $('#txtDescripcion').focus();
         }
     }
 })();
