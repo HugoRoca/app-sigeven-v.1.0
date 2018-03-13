@@ -68,7 +68,7 @@
 
       $("#txtBuscar").on("keyup", function () {
         var value = $(this).val().toLowerCase();
-        $("#tblArticulo tr").filter(function () {
+        $("#tblArticulo tbody tr").filter(function () {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });

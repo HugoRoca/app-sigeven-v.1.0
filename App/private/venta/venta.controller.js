@@ -23,10 +23,11 @@
     vm.Articulo;
     vm.user;
 
-    vm.buscaPrecio = buscaPrecio;
+    vm.seleccionaArticulo = seleccionaArticulo;
     vm.agregaFila = agregaFila;
     vm.eliminarFila = eliminarFila;
     vm.insertarVenta = insertarVenta;
+    vm.llamaModal = llamaModal;
 
     activate();
 
@@ -39,27 +40,38 @@
       loadjQuery();
       var f = new Date();
       vm.fecha = getDateFormat(f);
-      cargaComboArticulo();
+      cargaArticulos();
     }
 
     function loadjQuery() {
       $('#txtFecha').mask('00/00/0000');
+
+      $("#txtBuscaVenta").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#tblArticuloVenta tbody tr").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
     }
 
-    function buscaPrecio() {
+    function seleccionaArticulo(id, precio, descripcion, stock) {
       vm.Ventas.nPrecioVenta = 0;
-      for (let index = 0; index < vm.Articulo.length; index++) {
-        const element = vm.Articulo[index];
-        if (element.Id == vm.Ventas.nArticulo) {
-          vm.Ventas.nPrecioVenta = element.nPrecioVenta;
-          vm.Ventas.cDescripcion = element.cDescripcion;
-          vm.Ventas.nStock = element.nStock;
-          $('#txtCantidad').focus();
-        }
-      }
+      vm.Ventas.nArticulo = id;
+      vm.Ventas.nPrecioVenta = precio;
+      vm.Ventas.cDescripcion = descripcion;
+      vm.Ventas.nStock = stock;
+      $('#ArticulosVenta').modal('hide');
+
+      $('#txtCantidad').focus();
     }
 
-    function cargaComboArticulo() {
+    function llamaModal() {
+      $('#ArticulosVenta').modal('show');
+      $('#txtBuscaVenta').focus();
+    }
+
+    function cargaArticulos() {
       dataService.getData('Server/articulo_lista.php').then(function (data) {
         vm.Articulo = data.data;
         //$('#cmbArticulos').selectpicker('render');
@@ -74,7 +86,7 @@
       if (vm.Ventas.nCantidad == 0) return toastr.warning('Cantidad cero, no se puede agregar.', 'Validación');
 
       var existe = false;
-      $('table tbody').find('input[name="record"]').each(function () {
+      $('#tblVentas tbody').find('input[name="record"]').each(function () {
         var id = parseInt($("td", $(this).parents("tr")).eq(1).text());
         if (id == vm.Ventas.nArticulo) existe = true;
       });
@@ -96,7 +108,7 @@
       vm.Ventas.nTotalVenta += total;
 
       //newRow.append(cols);
-      $('table tbody').append(cols);
+      $('#tblVentas tbody').append(cols);
 
       vm.Ventas.nPrecioVenta = 0;
       vm.Ventas.cDescripcion = '';
@@ -107,7 +119,7 @@
     function eliminarFila() {
       bootbox.confirm("¿Desea continuar?", function (result) {
         if (result) {
-          $("table tbody").find('input[name="record"]').each(function () {
+          $("#tblVentas tbody").find('input[name="record"]').each(function () {
             if ($(this).is(":checked")) {
               var cantidad = parseInt($("td", $(this).parents("tr")).eq(4).text());
               var total = $("td", $(this).parents("tr")).eq(5).text();
@@ -133,7 +145,7 @@
           var fecha = vm.fecha.split('/');
           var fechaYMD = fecha[2] + '-' + fecha[1] + '-' + fecha[0];
           var ventaArray = [];
-          $('table tbody').find('input[name="record"]').each(function () {
+          $('#tblVentas tbody').find('input[name="record"]').each(function () {
             var cantidad = parseInt($("td", $(this).parents("tr")).eq(4).text());
             var id = parseInt($("td", $(this).parents("tr")).eq(1).text());
             ventaArray.push({
