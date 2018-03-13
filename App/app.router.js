@@ -29,6 +29,10 @@
         url: '/otro',
         templateUrl:'App/private/otros/otro.html'
       })
+      .state('proveedor',{
+        url: '/proveedor',
+        templateUrl: 'App/private/proveedor/proveedor.html'
+      })
       .state('otherwise', {
         url: '*path',
         templateUrl: 'App/private/portal/portal.html'
