@@ -91,16 +91,13 @@
               </a>
               <ul class="nav nav-second-level">
                 <li>
-                  <a href="">Stock</a>
+                  <a href="" ui-sref="consultaVenta" ui-sref-active="active">Ventas</a>
                 </li>
                 <li>
-                  <a href="">Ventas</a>
+                  <a href="" ui-sref="consultaProveedor" ui-sref-active="active">Proveedor</a>
                 </li>
                 <li>
-                  <a href="">Pedidos</a>
-                </li>
-                <li>
-                  <a href="">Gastos</a>
+                  <a href="" ui-sref="consultaGasto" ui-sref-active="active">Gastos</a>
                 </li>
               </ul>
             </li>
@@ -162,6 +159,7 @@
   <script src="App/private/gasto/gasto.controller.js"></script>
   <script src="App/private/otros/otro.controller.js"></script>
   <script src="App/private/proveedor/proveedor.controller.js"></script>
+  <script src="App/private/consultas/consulta.controller.js"></script>
 
   <script>
     $(document).on('click', '.navbar-collapse.in', function (e) {

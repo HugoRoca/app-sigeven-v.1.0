@@ -193,8 +193,10 @@ function abrirArchivoPDF(b64Data, nombreArchivo) {
             byteArrays.push(byteArray);
         }
 
-        var blob = new Blob(byteArrays, { type: contentType });
-        
+        var blob = new Blob(byteArrays, {
+            type: contentType
+        });
+
         download(blob, nombreArchivo, 'application/pdf');
 
         //var blobUrl = createObjectURL(blob);
@@ -255,19 +257,19 @@ function validarRUC(texto) {
 
 function emailCuerpo(titulo, nombre, resumen, descripcion1, texto1, texto2, descripcion2) {
     var body = '<table border="0" style="width: 100%; background: #f1f1f1; font-family: verdana">' +
-                    '<tr>' +
-                        '<td>' +
-                            '<table cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto; width: 85%">' +
-                                '<tr style="background: #FD293F">' +
-                                    '<td colspan="3" style="padding: 30px">' +
-                                        '<h1 style="text-transform: uppercase; text-align: center; color: white; margin: 0 auto; font-family: verdana">' + titulo + '</h1>' +
-                                    '</td>' +
-                                '</tr>' +
-                                '<tr style="background: white">' +
-                                    '<td colspan="3" style="padding: 15px;">' +
-                                        '<h2 style="background: white; text-transform: uppercase; text-align: center; font-family: verdana">hola ' + nombre + '</h2>' +
-                                        '<h4 style="font-weight: 500; text-transform: uppercase; text-align: center; font-family: verdana"><i>' + resumen + '</i></h4>' +
-                                        '<p style="text-align: justify; padding: 15px; font-family: verdana">' + descripcion1 + '</p>';
+        '<tr>' +
+        '<td>' +
+        '<table cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto; width: 85%">' +
+        '<tr style="background: #FD293F">' +
+        '<td colspan="3" style="padding: 30px">' +
+        '<h1 style="text-transform: uppercase; text-align: center; color: white; margin: 0 auto; font-family: verdana">' + titulo + '</h1>' +
+        '</td>' +
+        '</tr>' +
+        '<tr style="background: white">' +
+        '<td colspan="3" style="padding: 15px;">' +
+        '<h2 style="background: white; text-transform: uppercase; text-align: center; font-family: verdana">hola ' + nombre + '</h2>' +
+        '<h4 style="font-weight: 500; text-transform: uppercase; text-align: center; font-family: verdana"><i>' + resumen + '</i></h4>' +
+        '<p style="text-align: justify; padding: 15px; font-family: verdana">' + descripcion1 + '</p>';
     if (texto1 != '' || texto2 != '') {
         body = body + '<ul>';
         if (texto1 != '') {
@@ -283,17 +285,17 @@ function emailCuerpo(titulo, nombre, resumen, descripcion1, texto1, texto2, desc
         body = body + '<p>' + descripcion2 + '</p>';
     }
     body = body + '</td>' +
-               '</tr>' +
-               '<tr style="background: #454544; text-transform: uppercase; text-align: center">' +
-                   '<td style="padding: 25px">' +
-                       '<button style="text-align: center; color: #fff; font-size: 14px; font-weight: 500;  border:none; padding: 10px 20px; background-color: #FFB700; font-size: 25px">' +
-                           '<span style="color: #454544; text-transform: uppercase; font-weight: bold; font-size: 25px">Al&oacute; Lucas:</span> 01 615-7030</button>' +
-                   '</td>' +
-               '</tr>' +
-           '</table>' +
-       '</td>' +
-   '</tr>' +
-'</table>';
+        '</tr>' +
+        '<tr style="background: #454544; text-transform: uppercase; text-align: center">' +
+        '<td style="padding: 25px">' +
+        '<button style="text-align: center; color: #fff; font-size: 14px; font-weight: 500;  border:none; padding: 10px 20px; background-color: #FFB700; font-size: 25px">' +
+        '<span style="color: #454544; text-transform: uppercase; font-weight: bold; font-size: 25px">Al&oacute; Lucas:</span> 01 615-7030</button>' +
+        '</td>' +
+        '</tr>' +
+        '</table>' +
+        '</td>' +
+        '</tr>' +
+        '</table>';
     return body;
 }
 
@@ -321,7 +323,7 @@ function valoresReglaNegocio(ListaReglas) {
             valores.push(rules.cStored + '|' + xml + '|' + idRule);
         }
     }
-    
+
     return valores;
 
 }
@@ -336,7 +338,10 @@ function modalCargaLlamar(texto) {
     document.getElementById('modalCargandoTexto').innerHTML = texto;
     $bar.css('width', '1%')
     $bar.text('1%');
-    $('#modalCarga').modal({ backdrop: 'static', keyboard: false });
+    $('#modalCarga').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
 }
 
 $('#modalCarga').on('shown.bs.modal', function () {
@@ -446,4 +451,14 @@ function TextoCombo(val) {
     var combo = document.getElementById(val);
     var selected = combo.options[combo.selectedIndex].text;
     return selected;
+}
+
+function PasarFechaGuionesMySql(val) {
+    var fecha = val.split('/');
+    return fecha[2] + '-' + fecha[1] + '-' + fecha[0];
+}
+
+function PasarFechaBarraMySql(val) {
+    var fecha = val.split('-');
+    return fecha[2] + '/' + fecha[1] + '/' + fecha[0];
 }

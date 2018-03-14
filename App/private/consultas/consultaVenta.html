@@ -1,0 +1,115 @@
+<div ng-controller="consultaController as vm">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Consulta de Ventas</h1>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Consulta de Ventas
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" novalidate role="form">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Desde: </label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" ng-model="vm.Consulta.dDesde" id="txtFechaDesde">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Hasta: </label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" ng-model="vm.Consulta.dHasta" id="txtFechaHasta">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <p>
+                                <button class="btn btn-primary btn-block" ng-click="vm.buscaVentas()">
+                                    <span class="fa fa-search"></span> Buscar</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table table-hover table-bordered ">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Tot.Vendidos</th>
+                            <th>Total</th>
+                            <th>Usuario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in vm.Venta">
+                            <td>
+                                <button class="btn btn-danger btn-block" ng-click="vm.modalVenta(item.Id, item.nTotal, item.dFecha, item.nCantidad)">
+                                    <span class="fa fa-eye"></span>
+                                </button>
+                            </td>
+                            <td class="text-right">{{item.Id}}</td>
+                            <td>{{item.dFecha}}</td>
+                            <td class="text-right">{{item.nCantidad}}</td>
+                            <td class="text-right">{{item.nTotal | currency:'S/'}}</td>
+                            <td>{{item.cUsuReg}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="VentasDetalle" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Detalle de Ventas del día {{vm.Consulta.cTitulo}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <table class="table table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in vm.VentaDetalle">
+                                        <td>{{item.nIdArticulo}}</td>
+                                        <td>{{item.cDescripcion}}</td>
+                                        <td class="text-right">{{item.nCantidad}}</td>
+                                        <td class="text-right">{{item.nPrecio | currency:'S/'}}</td>
+                                        <td class="text-right">{{item.nTotal | currency:'S/'}}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" class="text-right">
+                                            <b>Total: </b>
+                                        </td>
+                                        <td class="text-right">{{vm.Consulta.nCantidad}}</td>
+                                        <td class="text-right">{{vm.Consulta.nTotal}}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

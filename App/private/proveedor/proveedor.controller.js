@@ -167,7 +167,6 @@
                     });
 
                     dataService.postData('Server/proveedor_insertar.php', ventaArray).then(function (data) {
-                        console.log(data);
                         if (data.data == 'ok') {
                             toastr.success('Datos registrados correctamente!', 'Registro');
                             $state.go('portal');
@@ -177,9 +176,6 @@
                     }, function (error) {
                         console.log(error);
                     });
-
-                    console.log(ventaArray);
-
                 }
             });
 
