@@ -18,9 +18,14 @@
         }
         vm.Venta;
         vm.VentaDetalle;
+        vm.Gasto;
+        vm.GastoDetalle;
 
         vm.buscaVentas = buscaVentas;
         vm.modalVenta = modalVenta;
+
+        vm.buscaGastos = buscaGastos;
+        vm.modalGasto = modalGasto;
 
         activate();
 
@@ -52,6 +57,19 @@
             });
         }
 
+        function buscaGastos() {
+            vm.Consulta.dDesde = PasarFechaGuionesMySql(vm.Consulta.dDesde);
+            vm.Consulta.dHasta = PasarFechaGuionesMySql(vm.Consulta.dHasta);
+
+            dataService.postData('Server/gasto_consulta.php', vm.Consulta).then(function (data) {
+                vm.Gasto = data.data;
+                vm.Consulta.dDesde = PasarFechaBarraMySql(vm.Consulta.dDesde);
+                vm.Consulta.dHasta = PasarFechaBarraMySql(vm.Consulta.dHasta);
+            }, function (error) {
+                console.log(error);
+            });
+        }
+
         function modalVenta(id, tot, fech, cant) {
             vm.Consulta.cTitulo = fech;
             vm.Consulta.nTotal = 'S/ ' + formatoMiles(tot);
@@ -59,11 +77,22 @@
 
             dataService.postData('Server/ventaDetalle_consulta.php', {nIdVenta: id}).then(function(data){
                 vm.VentaDetalle = data.data;
+                $('#VentasDetalle').modal('show');
             }, function(error){
                 console.log(error);
-            });
+            });            
+        }
 
-            $('#VentasDetalle').modal('show');
+        function modalGasto(id, tot, fech, cant){
+            vm.Consulta.cTitulo = fech;
+            vm.Consulta.nTotal = 'S/ ' + formatoMiles(tot);
+
+            dataService.postData('Server/gastoDetalle_consulta.php', {nIdGasto: id}).then(function(data){
+                vm.GastoDetalle = data.data;
+                $('#GastoDetalle').modal('show');
+            }, function(error){
+                console.log(error);
+            });  
         }
     }
 })();

@@ -9,6 +9,29 @@
             $this->db = DB();
         }
 
+        public function listaConsultaGasto($desde, $hasta){
+            $query = $this->db->prepare("call Gasto_Consulta_SP(?,?)");
+            $query->bindparam(1, $desde);
+            $query->bindparam(2, $hasta);
+            $query->execute();
+            $data = array();
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+              $data[] = $row;
+            }
+            return json_encode($data);
+        }
+
+        public function listaConsultaGastoDetalle($id){
+            $query = $this->db->prepare("call GastoDetalle_Consulta_SP(?)");
+            $query->bindparam(1, $id);
+            $query->execute();
+            $data = array();
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+              $data[] = $row;
+            }
+            return json_encode($data);
+        }
+
         public function insertarGasto($datos){
             $valor = '';
             
