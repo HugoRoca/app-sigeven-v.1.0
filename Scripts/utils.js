@@ -437,7 +437,6 @@ function hallapvPRev(calendario) {
 
 function ponerADecimales(val, decimal) {
     var valor = val.toFixed(parseInt(decimal + 1));
-    console.log(valor);
     var valorsplit = valor.split('.');
     var dec = valorsplit[1].substring(0, decimal);
     return valorsplit[0] + '.' + dec;

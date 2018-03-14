@@ -141,7 +141,47 @@
             if (vm.Proveedor.dFecha == '') return toastr.warning('Falta fecha.', 'Validación');
             if (vm.Proveedor.cNomProveedor == '') return toastr.warning('Falta nombre de proveedor.', 'Validación');
 
+            bootbox.confirm("¿Desea continuar?", function (result) {
+                if (result) {
+                    var fecha = vm.Proveedor.dFecha.split('/');
+                    var fechaYMD = fecha[2] + '-' + fecha[1] + '-' + fecha[0];
+                    var ventaArray = [];
 
+                    $('#tblProveedor tbody').find('input[name="record"]').each(function () {
+                        var id = parseInt($("td", $(this).parents("tr")).eq(1).text());
+                        var pcompra = ($("td", $(this).parents("tr")).eq(3).text()).replace('S/ ', '');
+                        var pventa = ($("td", $(this).parents("tr")).eq(4).text()).replace('S/ ', '');
+                        var cantidad = parseInt($("td", $(this).parents("tr")).eq(5).text());
+                        var ptotal = ($("td", $(this).parents("tr")).eq(6).text()).replace('S/ ', '');
+
+                        ventaArray.push({
+                            dFech: fechaYMD,
+                            cNomProv: vm.Proveedor.cNomProveedor,
+                            idArt: id,
+                            nCant: cantidad,
+                            nPxC: pcompra,
+                            nPxV: pventa,
+                            nPTotal: ptotal,
+                            cUsu: vm.Proveedor.cUser
+                        });
+                    });
+
+                    dataService.postData('Server/proveedor_insertar.php', ventaArray).then(function (data) {
+                        console.log(data);
+                        if (data.data == 'ok') {
+                            toastr.success('Datos registrados correctamente!', 'Registro');
+                            $state.go('portal');
+                        }else{
+                            toastr.error('Hubo un error al registrar. Comuníquese con el administrador de sistemas.','Error');
+                        }
+                    }, function (error) {
+                        console.log(error);
+                    });
+
+                    console.log(ventaArray);
+
+                }
+            });
 
             toastr.success('Articulos y proveedor registrados correctamente.', 'Registro Proveedor');
         }
