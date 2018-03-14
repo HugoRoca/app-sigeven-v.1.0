@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.24-log : Database - dbventas
+MySQL - 5.5.5-10.1.30-MariaDB : Database - dbventas
 *********************************************************************
 */
 
@@ -34,15 +34,11 @@ CREATE TABLE `articulo` (
   `cUserAct` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   `dFechaAct` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `articulo` */
 
-LOCK TABLES `articulo` WRITE;
-
-insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'POET',7,1,2,1.2,1.7,1,'','0000-00-00 00:00:00','hroca','2018-03-12 09:08:32'),(2,'Cepillo',5,2,1,0.9,1,1,'','0000-00-00 00:00:00',NULL,NULL),(3,'Pega Mosca',5,4,3,0.7,1,1,'','0000-00-00 00:00:00',NULL,NULL),(4,'probando',40,2,4,1.2,1.58,0,'','0000-00-00 00:00:00',NULL,NULL),(5,'dento 75ml',5,2,4,2,2.5,1,'','0000-00-00 00:00:00',NULL,NULL),(6,'colgate 125ml',1,1,2,2.3,2.8,1,'','0000-00-00 00:00:00',NULL,NULL),(7,'DENTO 125ML',13,5,4,1.9,2.9,1,'','0000-00-00 00:00:00','hroca','2018-03-07 17:06:42'),(8,'ganchos de ropa (plastico)',5,2,1,2,2.5,1,'hroca','2018-03-07 17:07:35','hroca','2018-03-12 09:08:41'),(9,'gancho de ropa (madera)',5,1,2,2,2.5,1,'hroca','2018-03-07 17:10:51','hroca','2018-03-11 17:45:59'),(10,'Escoba Clorinda chica',2,3,4,4.6,5,1,'hroca','2018-03-11 17:25:14','hroca','2018-03-11 18:24:23');
-
-UNLOCK TABLES;
+insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'Escoba clorinda chica',4,6,6,0,5.6,1,'hroca','2018-03-14 18:06:41',NULL,NULL);
 
 /*Table structure for table `articuloimagen` */
 
@@ -54,15 +50,10 @@ CREATE TABLE `articuloimagen` (
   `iImagen` mediumblob,
   `cRuta` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`Id`),
-  KEY `FKArticuloImagen` (`IdArticulo`),
-  CONSTRAINT `FKArticuloImagen` FOREIGN KEY (`IdArticulo`) REFERENCES `articulo` (`Id`)
+  KEY `FKArticuloImagen` (`IdArticulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `articuloimagen` */
-
-LOCK TABLES `articuloimagen` WRITE;
-
-UNLOCK TABLES;
 
 /*Table structure for table `catalogocodigo` */
 
@@ -71,17 +62,13 @@ DROP TABLE IF EXISTS `catalogocodigo`;
 CREATE TABLE `catalogocodigo` (
   `Id` int(11) NOT NULL,
   `cNomCod` varchar(100) NOT NULL,
-  `cValor` varchar(20) NOT NULL,
+  `cValor` int(11) NOT NULL,
   `nEstado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `catalogocodigo` */
 
-LOCK TABLES `catalogocodigo` WRITE;
-
-insert  into `catalogocodigo`(`Id`,`cNomCod`,`cValor`,`nEstado`) values (1000,'perfumadores','1000',1),(1000,'Veneno','1',0),(1000,'cera','2',1),(1000,'saca brillo','3',1),(1000,'casa suciedad','4',1),(1000,'perfumadores antiestress','5',1),(2000,'MARCAS','2000',1),(2000,'SAPOLIO','1',1),(2000,'POET','2',1),(2000,'RAIDMAX','3',1),(2000,'AYUDIN','4',1),(2000,'prueba','5',0),(1000,'perfumadores','6',1),(2000,'RAIDMAX','6',1);
-
-UNLOCK TABLES;
+insert  into `catalogocodigo`(`Id`,`cNomCod`,`cValor`,`nEstado`) values (1000,'perfumadores',1000,1),(1000,'Veneno',1,1),(2000,'MARCAS',2000,1),(2000,'SAPOLIO',1,1),(1000,'Perfumador',2,1),(1000,'Mascotas',3,1),(2000,'Ayudin',2,1),(2000,'NowClin',3,1),(2000,'Clorox',4,1),(2000,'Clorandina',5,1),(2000,'Clorinda',6,1),(2000,'Poet',7,1),(1000,'Aseo Personal',4,1),(2000,'RaidMax',8,1),(2000,'Schick',9,1),(2000,'Dento',11,1),(2000,'Colgate',10,1),(2000,'Santiago',12,1),(2000,'Glade',13,1),(1000,'Pastillas',5,1),(2000,'Amigo',14,1),(2000,'Kanino',15,1),(2000,'Practican',16,1),(2000,'Doky\'s',17,1),(1000,'Escobas',6,1);
 
 /*Table structure for table `gasto` */
 
@@ -95,15 +82,9 @@ CREATE TABLE `gasto` (
   `cUsuReg` varchar(50) NOT NULL,
   `dFechaReg` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `gasto` */
-
-LOCK TABLES `gasto` WRITE;
-
-insert  into `gasto`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-12',4,3.3,'hroca','2018-03-12 15:19:46');
-
-UNLOCK TABLES;
 
 /*Table structure for table `gastodetalle` */
 
@@ -119,11 +100,37 @@ CREATE TABLE `gastodetalle` (
 
 /*Data for the table `gastodetalle` */
 
-LOCK TABLES `gastodetalle` WRITE;
+/*Table structure for table `proveedor` */
 
-insert  into `gastodetalle`(`nIdGasto`,`cDescripcion`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'marcianp',0.5,'hroca','2018-03-12 15:19:47'),(1,'tripita',1.2,'hroca','2018-03-12 15:19:47'),(1,'tari',0.4,'hroca','2018-03-12 15:19:47'),(1,'gaseosa',1.2,'hroca','2018-03-12 15:19:47');
+DROP TABLE IF EXISTS `proveedor`;
 
-UNLOCK TABLES;
+CREATE TABLE `proveedor` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `cNomProveedor` varchar(200) NOT NULL,
+  `nCantidad` int(11) NOT NULL,
+  `nTotal` double NOT NULL,
+  `dFecha` date NOT NULL,
+  `dFechaReg` datetime NOT NULL,
+  `cUserReg` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `proveedor` */
+
+/*Table structure for table `proveedordetalle` */
+
+DROP TABLE IF EXISTS `proveedordetalle`;
+
+CREATE TABLE `proveedordetalle` (
+  `nIdProveedor` int(11) NOT NULL,
+  `nIdArticulo` int(11) NOT NULL,
+  `nPrecioCompra` double NOT NULL,
+  `nPrecioVenta` double NOT NULL,
+  `nCantidad` int(11) NOT NULL,
+  `nTotal` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `proveedordetalle` */
 
 /*Table structure for table `usuario` */
 
@@ -139,11 +146,7 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
-LOCK TABLES `usuario` WRITE;
-
 insert  into `usuario`(`Id`,`cNomUsu`,`cContrasenia`,`cNombres`) values (1,'hroca','ventas2018','Hugo Antonio Roca Espinoza'),(2,'jchavez','ventas2018',NULL);
-
-UNLOCK TABLES;
 
 /*Table structure for table `venta` */
 
@@ -157,15 +160,9 @@ CREATE TABLE `venta` (
   `cUsuReg` varchar(50) NOT NULL,
   `dFechaReg` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `venta` */
-
-LOCK TABLES `venta` WRITE;
-
-insert  into `venta`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-10',26,43.3,'hroca','2018-03-10 11:37:46'),(2,'2018-03-09',8,17.6,'hroca','2018-03-10 11:57:03'),(3,'2018-03-11',6,17,'hroca','2018-03-11 17:26:46'),(4,'2018-03-12',4,11.4,'hroca','2018-03-12 09:30:55');
-
-UNLOCK TABLES;
 
 /*Table structure for table `ventadetalle` */
 
@@ -179,18 +176,10 @@ CREATE TABLE `ventadetalle` (
   `cUsuReg` varchar(50) NOT NULL,
   `dFechaReg` datetime NOT NULL,
   KEY `venta` (`nIdVenta`),
-  KEY `articulo` (`nIdArticulo`),
-  CONSTRAINT `articulo` FOREIGN KEY (`nIdArticulo`) REFERENCES `articulo` (`Id`),
-  CONSTRAINT `venta` FOREIGN KEY (`nIdVenta`) REFERENCES `venta` (`Id`)
+  KEY `articulo` (`nIdArticulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `ventadetalle` */
-
-LOCK TABLES `ventadetalle` WRITE;
-
-insert  into `ventadetalle`(`nIdVenta`,`nIdArticulo`,`nCantidad`,`nPrecio`,`cUsuReg`,`dFechaReg`) values (1,2,1,1,'hroca','2018-03-10 11:45:00'),(1,8,1,2.5,'hroca','2018-03-10 11:45:00'),(1,9,1,2.5,'hroca','2018-03-10 11:45:00'),(1,1,5,1.7,'hroca','2018-03-10 11:52:23'),(1,2,2,1,'hroca','2018-03-10 11:52:23'),(1,3,5,1,'hroca','2018-03-10 11:52:23'),(1,5,2,2.5,'hroca','2018-03-10 11:52:24'),(1,6,2,2.8,'hroca','2018-03-10 11:52:24'),(2,1,1,1.7,'hroca','2018-03-10 11:57:03'),(2,9,2,2.5,'hroca','2018-03-10 11:57:03'),(2,8,3,2.5,'hroca','2018-03-10 11:57:03'),(3,10,2,5,'hroca','2018-03-11 17:26:46'),(3,2,2,1,'hroca','2018-03-11 17:26:46'),(3,9,2,2.5,'hroca','2018-03-11 17:26:47'),(2,1,2,1.7,'hroca','2018-03-11 22:59:44'),(4,6,2,2.8,'hroca','2018-03-12 09:30:55'),(4,7,2,2.9,'hroca','2018-03-12 09:30:56');
-
-UNLOCK TABLES;
 
 /* Procedure structure for procedure `Articulo_Actualiza_SP` */
 
@@ -368,7 +357,7 @@ BEGIN
     max(cValor) + 1 
   from
     catalogocodigo 
-  where Id = nId) ;
+  where Id = nId and cValor != nId) ;
   insert into catalogocodigo (Id, cNomCod, cValor, nEstado) 
   values
     (nId, cNom, @cValor, nEst) ;
@@ -408,6 +397,45 @@ BEGIN
   WHERE Id = nCodigo 
     AND cValor != Id order by cValor asc;
   end if ;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `GastoDetalle_Consulta_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `GastoDetalle_Consulta_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `GastoDetalle_Consulta_SP`(IN nId INT)
+BEGIN
+  select 
+    cDescripcion,
+    nTotal 
+  from
+    gastodetalle 
+  where nIdGasto = nId ;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `Gasto_Consulta_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Gasto_Consulta_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Gasto_Consulta_SP`(IN desde DATE, IN hasta DATE)
+BEGIN
+  SELECT 
+    Id,
+    DATE_FORMAT(dFecha, '%d/%m/%Y') AS dFecha,
+    nCantidad,
+    nTotal,
+    cUsuReg 
+  FROM
+    gasto 
+  WHERE dFecha BETWEEN desde 
+    AND hasta 
+  ORDER BY dFecha DESC ;
 END */$$
 DELIMITER ;
 
@@ -452,6 +480,28 @@ SELECT * FROM usuario WHERE cNomUsu = cUsuario AND cContrasenia = cPassword;
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `VentaDetalle_Consulta_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `VentaDetalle_Consulta_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `VentaDetalle_Consulta_SP`(in nId int)
+BEGIN
+  select 
+    v.nIdArticulo,
+    a.cDescripcion,
+    v.nCantidad,
+    v.nPrecio,
+    v.nCantidad * v.nPrecio as nTotal 
+  from
+    ventadetalle v 
+    inner join articulo a 
+      on v.nIdArticulo = a.Id 
+  where nIdVenta = nId ;
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `Ventas_ListaPorSemana_SP` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `Ventas_ListaPorSemana_SP` */;
@@ -470,6 +520,66 @@ BEGIN
       ON v.`dFecha` = g.`dFecha` 
   ORDER BY v.dfecha DESC 
   LIMIT 4 ;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `Venta_Consulta_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Venta_Consulta_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Venta_Consulta_SP`(in desde date, in hasta date)
+BEGIN
+  select 
+    Id,
+    DATE_FORMAT(dFecha, '%d/%m/%Y') as dFecha,
+    nCantidad,
+    nTotal,
+    cUsuReg 
+  from
+    venta 
+  where dFecha between desde 
+    and hasta 
+  order by dFecha desc ;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `Proveedor_Insertar_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Proveedor_Insertar_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Proveedor_Insertar_SP`(
+  IN dFech DATE,
+  in cNomProv varchar(200),
+  in idArt int,
+  in nCant int,
+  in nPxC double,
+  in nPxV double,
+  in nPTotal double,  
+  IN cUsu VARCHAR(50)
+)
+BEGIN
+	set @contador = (select count(*) from proveedor where dFecha = dFech and cNomProveedor = cNomProv);
+	SET @nCodigo = 0;
+		
+	IF @contador = 0 THEN
+		insert into proveedor(cNomProveedor, nCantidad, nTotal, dFecha, dFechaReg, cUserReg)
+		values(cNomProv, nCant, nPTotal, dFech, now(), cUsu);
+	ELSE	
+		SET @nCodigo = (SELECT Id FROM proveedor WHERE dFecha = dFech AND cNomProveedor = cNomProv);
+		update proveedor set nCantidad = nCant, nTotal = nTotal + nPTotal where Id = @nCodigo;
+	END IF;	
+	
+	SET @nCodigo = (SELECT Id FROM proveedor WHERE dFecha = dFech AND cNomProveedor = cNomProv);
+	
+	insert into proveedorDetalle(nIdProveedor, nIdArticulo,nPrecioCompra, nPrecioVenta, nCantidad, nTotal)
+	values(@nCodigo, idArt, nPxC, nPxV, nCant, nPTotal);
+	
+	update articulo	set nStock = nStock + nCant, nPrecioCompra = nPxC, nPrecioVenta = nPxV where Id = idArt;
+	
 END */$$
 DELIMITER ;
 
