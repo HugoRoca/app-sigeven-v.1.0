@@ -8,15 +8,14 @@
         <div class="panel-heading">
             <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Proveedor
         </div>
-        <div class="panel body" style="padding: 10px">
+        <div class="panel-body" style="padding: 10px">
             <form role="form" novalidate name="frmProveedor" class="form-horizontal">
                 <div class="row">
                     <div class="col-md-offset-8 col-md-4">
                         <div class="form-group">
                             <label class="control-label col-md-7">Fecha: </label>
                             <div class="col-md-5">
-                                <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.Proveedor.dFecha" ng-disabled="true"
-                                    disabled>
+                                <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.Proveedor.dFecha">
                             </div>
                         </div>
                     </div>
@@ -26,7 +25,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Nombre Proveedor: </label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" maxlength="100" autofocus autocomplete="off" ng-model="vm.Proveedor.cNomProveedor">
+                                <input type="text" class="form-control" maxlength="100" autofocus autocomplete="off" ng-model="vm.Proveedor.cNomProveedor" maxlength="200">
                             </div>
                         </div>
                     </div>
@@ -75,7 +74,7 @@
                 <div class="row">
                     <div class="col-md-offset-10 col-md-2">
                         <p>
-                            <button class="btn btn-primary btn-block">
+                            <button class="btn btn-primary btn-block" ng-click="vm.agregarFila()">
                                 <span class="fa fa-plus"></span> Agregar</button>
                         </p>
                     </div>
@@ -91,12 +90,41 @@
                             <th>PxC</th>
                             <th>PxV</th>
                             <th>Cantidad</th>
+                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
-
                     </tbody>
+                    <tfoot>
+                        <td>
+                            <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
+                                <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                        </td>
+                        <td colspan="4" class="text-right">
+                            <h4>
+                                <b>Total:</b>
+                            </h4>
+                        </td>
+                        <td class="text-right">
+                            <h4>
+                                <b>{{vm.Proveedor.nCantidadTotal}}</b>
+                            </h4>
+                        </td>
+                        <td class="text-right">
+                            <h4>
+                                <b>{{vm.Proveedor.nTotalProveedor | currency:'S/'}}</b>
+                            </h4>
+                        </td>
+                    </tfoot>
                 </table>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-9 col-md-3">
+                    <p class="text-right">
+                        <button class="btn btn-success btn-block" type="button" ng-click="vm.insertarProveedor()">
+                            <span class="fa fa-save"></span> Registrar Proveedor</button>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

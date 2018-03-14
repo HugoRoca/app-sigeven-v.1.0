@@ -18,6 +18,8 @@
             nPrecioVenta: 0,
             nCantidad: 0,
             nStock: 0,
+            nCantidadTotal: 0,
+            nTotalProveedor: 0,
             cUser: ''
         }
         vm.Articulo;
@@ -25,6 +27,8 @@
         vm.seleccionaArticulo = seleccionaArticulo;
         vm.llamaModal = llamaModal;
         vm.agregarFila = agregarFila;
+        vm.eliminarFila = eliminarFila;
+        vm.insertarProveedor = insertarProveedor;
 
         activate();
 
@@ -81,8 +85,65 @@
             if (isNaN(vm.Proveedor.nPrecioVenta)) return toastr.warning('Precio de venta no permitida.', 'Validación');
             if (vm.Proveedor.nCantidad == 0) return toastr.warning('Falta cantidad del artículo.', 'Validación');
 
-            
+            var existe = false;
+            $('#tblProveedor tbody').find('input[name="record"]').each(function () {
+                var id = parseInt($("td", $(this).parents("tr")).eq(1).text());
+                if (id == vm.Proveedor.nArticulo) existe = true;
+            });
 
+            if (existe) return toastr.warning('Este artículo ya fue agregado.', 'Validación');
+
+            var cols = '';
+            var total = Math.round(parseInt(vm.Proveedor.nCantidad) * parseFloat(vm.Proveedor.nPrecioVenta) * 100.00) / 100.00;
+
+            cols += '<tr><td class="text-center"><input type="checkbox" name="record"></td>';
+            cols += '<td class="text-right">' + vm.Proveedor.nArticulo + '</td>';
+            cols += '<td>' + vm.Proveedor.cArticulo + '</td>';
+            cols += '<td class="text-right">S/ ' + vm.Proveedor.nPrecioCompra + '</td>';
+            cols += '<td class="text-right">S/ ' + vm.Proveedor.nPrecioVenta + '</td>';
+            cols += '<td class="text-right">' + vm.Proveedor.nCantidad + '</td>';
+            cols += '<td class="text-right">S/ ' + total + '</td></tr>';
+
+            vm.Proveedor.nCantidadTotal += vm.Proveedor.nCantidad;
+            vm.Proveedor.nTotalProveedor += total;
+
+            $('#tblProveedor tbody').append(cols);
+
+            vm.Proveedor.nPrecioCompra = 0;
+            vm.Proveedor.nPrecioVenta = 0;
+            vm.Proveedor.nArticulo = 0;
+            vm.Proveedor.cArticulo = '';
+            vm.Proveedor.nCantidad = 0;
+        }
+
+        function eliminarFila() {
+            bootbox.confirm("¿Desea continuar?", function (result) {
+                if (result) {
+                    $("#tblProveedor tbody").find('input[name="record"]').each(function () {
+                        if ($(this).is(":checked")) {
+                            var cantidad = parseInt($("td", $(this).parents("tr")).eq(5).text());
+                            var total = $("td", $(this).parents("tr")).eq(6).text();
+                            total = total.replace('S/ ', '');
+
+                            vm.Proveedor.nCantidadTotal -= cantidad;
+                            vm.Proveedor.nTotalProveedor -= parseFloat(total);
+
+                            $(this).parents("tr").remove();
+                        }
+                    });
+                    toastr.success('Los artículos fueron eliminados de la lista.', 'Eliminación');
+                }
+            });
+        }
+
+        function insertarProveedor() {
+            if (vm.Proveedor.nCantidadTotal <= 0) return toastr.warning('Debe de agregar artículos.', 'Validación');
+            if (vm.Proveedor.dFecha == '') return toastr.warning('Falta fecha.', 'Validación');
+            if (vm.Proveedor.cNomProveedor == '') return toastr.warning('Falta nombre de proveedor.', 'Validación');
+
+
+
+            toastr.success('Articulos y proveedor registrados correctamente.', 'Registro Proveedor');
         }
     }
 })();
