@@ -76,7 +76,8 @@
 
     function llenaMarca() {
       dataService.postData('Server/catalogoCodigo_Lista.php', {
-        Id: 2000, nTip:1
+        Id: 2000,
+        nTip: 1
       }).then(function (marca) {
         vm.Marca = marca.data;
       }, function (error) {
@@ -86,7 +87,8 @@
 
     function llenaTipo() {
       dataService.postData('Server/catalogoCodigo_Lista.php', {
-        Id: 1000, nTip:1
+        Id: 1000,
+        nTip: 1
       }).then(function (tipo) {
         vm.Tipos = tipo.data
       }, function (error) {
@@ -112,6 +114,7 @@
         vm.Articulos.cUser = vm.user;
         bootbox.confirm("¿Desea continuar?", function (result) {
           if (result) {
+            $('#Articulo').modal('hide');
             if (vm.accion == 'nuevo') {
               dataService.postData('Server/articulo_insert.php', {
                 articulo: vm.Articulos
@@ -138,7 +141,7 @@
 
     function limpiador() {
       llenaArticulo();
-      $('#Articulo').modal('hide');
+      
       vm.Articulos = {
         cDescripcion: '',
         nStock: '',
