@@ -36,9 +36,9 @@
       <div class="topbar-left">
         <div class="text-center">
           <a href="index.html" class="logo">
-            <i class="icon-magnet icon-c-logo"></i>
-            <span>Ub
-              <i class="md md-album"></i>ld</span>
+            <i class="md-trending-up icon-c-logo"></i>
+            <span>Sigeven
+              <i class="md md-trending-up"></i></span>
           </a>
           <!-- Image Logo here -->
           <!--<a href="index.html" class="logo">-->
@@ -195,17 +195,26 @@
   <script src="Content/assets/js/bootstrap.min.js"></script>
   <script src="Content/assets/js/detect.js"></script>
   <script src="Content/assets/js/fastclick.js"></script>
+
   <script src="Content/assets/js/jquery.slimscroll.js"></script>
   <script src="Content/assets/js/jquery.blockUI.js"></script>
   <script src="Content/assets/js/waves.js"></script>
   <script src="Content/assets/js/wow.min.js"></script>
   <script src="Content/assets/js/jquery.nicescroll.js"></script>
   <script src="Content/assets/js/jquery.scrollTo.min.js"></script>
+  
+  <script src="Content/assets/plugins/peity/jquery.peity.min.js"></script>
 
-  <script src="Content/assets/js/jquery.core.js"></script>
-  <script src="Content/assets/js/jquery.app.js"></script>
+  <script src="Content/assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+  <script src="Content/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
   <script src="Content/assets/plugins/morris/morris.min.js"></script>
   <script src="Content/assets/plugins/raphael/raphael-min.js"></script>
+  
+  <script src="Content/assets/plugins/jquery-knob/jquery.knob.js"></script>
+ 
+  <script src="Content/assets/js/jquery.core.js"></script>
+  <script src="Content/assets/js/jquery.app.js"></script>
 
   <script src="Scripts/angular.js"></script>
   <script src="Scripts/bootbox.js"></script>
@@ -235,6 +244,12 @@
   <script src="App/private/otros/otro.controller.js"></script>
   <script src="App/private/proveedor/proveedor.controller.js"></script>
   <script src="App/private/consultas/consulta.controller.js"></script>
+
+  <script>
+    $(function() {
+      $(".knob").knob();
+    });
+  </script>
 
   <script>
     $(document).on('click', '.navbar-collapse.in', function (e) {

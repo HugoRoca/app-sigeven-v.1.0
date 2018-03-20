@@ -1,428 +1,170 @@
 <div ng-controller="portalController as vm">
     <div class="row">
         <div class="col-sm-12">
-            <div class="btn-group pull-right m-t-15">
-                <button type="button" class="btn btn-default dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings
-                    <span class="m-l-5">
-                        <i class="fa fa-cog"></i>
-                    </span>
-                </button>
-                <ul class="dropdown-menu drop-menu-right" role="menu">
-                    <li>
-                        <a href="#">Action</a>
-                    </li>
-                    <li>
-                        <a href="#">Another action</a>
-                    </li>
-                    <li>
-                        <a href="#">Something else here</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">Separated link</a>
-                    </li>
-                </ul>
-            </div>
-
             <h4 class="page-title">Dashboard</h4>
-            <p class="text-muted page-title-alt">Welcome to Ubold admin panel !</p>
+            <p class="text-muted page-title-alt">Bienvenido al panel de administración de SIGEVEN !</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <div class="bg-icon bg-icon-info pull-left">
+                    <i class="md md-attach-money text-info"></i>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-dark">
+                        <b class="counter">31,570</b>
+                    </h3>
+                    <p class="text-muted">Total Revenue</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <div class="bg-icon bg-icon-custom pull-left">
+                    <i class="md md-add-shopping-cart text-custom"></i>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-dark">
+                        <b class="counter">280</b>
+                    </h3>
+                    <p class="text-muted">Today's Sales</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <div class="bg-icon bg-icon-info pull-left">
+                    <i class="md md-equalizer text-info"></i>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-dark">
+                        <b class="counter">0.16</b>%</h3>
+                    <p class="text-muted">Conversion</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <div class="bg-icon bg-icon-custom pull-left">
+                    <i class="md md-remove-red-eye text-custom"></i>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-dark">
+                        <b class="counter">64,570</b>
+                    </h3>
+                    <p class="text-muted">Today's Visits</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-lg-4">
-            <div class="card-box">
-                <div class="bar-widget">
-                    <div class="table-box">
-                        <div class="table-detail">
-                            <div class="iconbox bg-info">
-                                <i class="icon-layers"></i>
-                            </div>
-                        </div>
-
-                        <div class="table-detail">
-                            <h4 class="m-t-0 m-b-5">
-                                <b>Active</b>
-                            </h4>
-                            <h5 class="text-muted m-b-0 m-t-0">120 Deals</h5>
-                        </div>
-                        <div class="table-detail text-right">
-                            <span data-plugin="peity-bar" data-colors="#34d3eb,#ebeff2" data-width="120" data-height="45">5,3,9,6,5,9,7,3,5,2,9,7,2,1</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="col-lg-4">
             <div class="card-box">
-                <div class="bar-widget">
-                    <div class="table-box">
-                        <div class="table-detail">
-                            <div class="iconbox bg-custom">
-                                <i class="icon-trophy"></i>
-                            </div>
-                        </div>
+                <h4 class="text-dark header-title m-t-0 m-b-30">Total Revenue</h4>
 
-                        <div class="table-detail">
-                            <h4 class="m-t-0 m-b-5">
-                                <b>Won</b>
-                            </h4>
-                            <h5 class="text-muted m-b-0 m-t-0">95 Deals</h5>
-                        </div>
-                        <div class="table-detail text-right">
-                            <span data-plugin="peity-pie" data-colors="#7e57c2,#ebeff2" data-width="50" data-height="45">1/5</span>
-                        </div>
-
-                    </div>
+                <div class="widget-chart text-center">
+                    <input class="knob" data-width="150" data-height="150" data-linecap=round data-fgColor="#34d3eb" value="80" data-skin="tron"
+                        data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                    <h5 class="text-muted m-t-20">Total sales made today</h5>
+                    <h2 class="font-600">$75</h2>
+                    <ul class="list-inline m-t-15">
+                        <li>
+                            <h5 class="text-muted m-t-20">Target</h5>
+                            <h4 class="m-b-0">$1000</h4>
+                        </li>
+                        <li>
+                            <h5 class="text-muted m-t-20">Last week</h5>
+                            <h4 class="m-b-0">$523</h4>
+                        </li>
+                        <li>
+                            <h5 class="text-muted m-t-20">Last Month</h5>
+                            <h4 class="m-b-0">$965</h4>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-8">
             <div class="card-box">
-                <div class="bar-widget">
-                    <div class="table-box">
-                        <div class="table-detail">
-                            <div class="iconbox bg-danger">
-                                <i class="icon-close"></i>
-                            </div>
-                        </div>
 
-                        <div class="table-detail">
-                            <h4 class="m-t-0 m-b-5">
-                                <b>Lost</b>
-                            </h4>
-                            <h5 class="text-muted m-b-0 m-t-0">85 Deals</h5>
-                        </div>
-                        <div class="table-detail text-right">
-                            <span data-plugin="peity-donut" data-colors="#f05050,#ebeff2" data-width="50" data-height="45">1/5</span>
-                        </div>
+                <h4 class="text-dark header-title m-t-0">Total Sales</h4>
 
-                    </div>
+                <div class="text-center">
+                    <ul class="list-inline chart-detail-list">
+                        <li>
+                            <h5>
+                                <i class="fa fa-circle m-r-5" style="color: #7e57c2;"></i>Desktops</h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <i class="fa fa-circle m-r-5" style="color: #34d3eb;"></i>Tablets</h5>
+                        </li>
+                    </ul>
                 </div>
+
+                <div id="morris-line-example" style="height: 300px;"></div>
+
             </div>
         </div>
+
+
+
     </div>
+    <!-- end row -->
 
 
     <div class="row">
 
         <div class="col-lg-12">
+
             <div class="card-box">
-                <h4 class="text-dark header-title m-t-0">Deals Analytics</h4>
+                <h4 class="text-dark header-title m-t-0">Stocks</h4>
                 <div class="text-center">
                     <ul class="list-inline chart-detail-list">
                         <li>
                             <h5>
-                                <i class="fa fa-circle m-r-5" style="color: #7e57c2;"></i>Deal - Won</h5>
+                                <i class="fa fa-circle m-r-5" style="color: #7e57c2;"></i>Stock</h5>
                         </li>
                         <li>
                             <h5>
-                                <i class="fa fa-circle m-r-5" style="color: #34d3eb;"></i>Deal - Lost</h5>
+                                <i class="fa fa-circle m-r-5" style="color: #b39ddb;"></i>Ventas</h5>
                         </li>
                     </ul>
                 </div>
-                <div id="morris-line-chart" style="height: 300px;"></div>
+                <div id="morris-bar-stacked" style="height: 303px;"></div>
             </div>
-            <!-- /Portlet -->
 
         </div>
 
-    </div>
-    <!-- end row -->
 
-
-    <div class="row">
-
-        <div class="col-lg-6">
-            <div class="card-box">
-                <h4 class="text-dark header-title m-t-0 m-b-30">Average time for deal</h4>
-                <div>
-                    <div id="morris-bar-chart" style="height: 320px;"></div>
-                </div>
-            </div>
-        </div>
-        <!-- col -->
-
-        <div class="col-lg-6">
-            <div class="card-box">
-                <h4 class="text-dark header-title m-t-0 m-b-30">Sales by product group</h4>
-                <div class="text-center">
-                    <ul class="list-inline chart-detail-list">
-                        <li>
-                            <h5>
-                                <i class="fa fa-circle m-r-5" style="color: #ebeff2;"></i>Group 1</h5>
-                        </li>
-                        <li>
-                            <h5>
-                                <i class="fa fa-circle m-r-5" style="color: #7e57c2;"></i>Group 2</h5>
-                        </li>
-                        <li>
-                            <h5>
-                                <i class="fa fa-circle m-r-5" style="color: #34d3eb;"></i>Group 3</h5>
-                        </li>
-                    </ul>
-                </div>
-                <div id="donut-chart">
-                    <div id="morris-donut-example" style="height: 274px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- col -->
-
-
-    </div>
-    <!-- end row -->
-
-
-    <div class="row">
-        <div class="col-lg-7">
-            <div class="card-box">
-                <h4 class="text-dark header-title m-t-0">Contacts</h4>
-                <p class="text-muted m-b-30 font-13">
-                    Your awesome text goes here.
-                </p>
-
-                <div class="nicescroll" style="height: 300px;">
-                    <div class="table-responsive">
-                        <table class="table table-actions-bar">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Category</th>
-                                    <th>Email</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>John deo</td>
-                                    <td>Category one</td>
-                                    <td>johndeo@dummy.com</td>
-                                    <td>
-                                        <span class="label label-success">Delivered</span>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action-btn">
-                                            <i class="md md-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end col -->
-
-        <div class="col-lg-5">
-            <div class="card-box">
-                <h4 class="text-dark header-title m-t-0">Activities</h4>
-                <p class="text-muted font-13">
-                    Your awesome text goes here.
-                </p>
-
-                <div class="nicescroll p-20" style="height: 320px;">
-                    <div class="timeline-2">
-                        <div class="time-item">
-                            <div class="item-info">
-                                <div class="text-muted">
-                                    <small>5 minutes ago</small>
-                                </div>
-                                <p>
-                                    <strong>
-                                        <a href="#" class="text-info">John Doe</a>
-                                    </strong> Uploaded a photo
-                                    <strong>"DSC000586.jpg"</strong>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="time-item">
-                            <div class="item-info">
-                                <div class="text-muted">
-                                    <small>30 minutes ago</small>
-                                </div>
-                                <p>
-                                    <a href="" class="text-info">Lorem</a> commented your post.</p>
-                                <p>
-                                    <em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt
-                                        euismod. "</em>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="time-item">
-                            <div class="item-info">
-                                <div class="text-muted">
-                                    <small>59 minutes ago</small>
-                                </div>
-                                <p>
-                                    <a href="" class="text-info">Jessi</a> attended a meeting with
-                                    <a href="#" class="text-success">John Doe</a>.</p>
-                                <p>
-                                    <em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt
-                                        euismod. "</em>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="time-item">
-                            <div class="item-info">
-                                <div class="text-muted">
-                                    <small>5 minutes ago</small>
-                                </div>
-                                <p>
-                                    <strong>
-                                        <a href="#" class="text-info">John Doe</a>
-                                    </strong>Uploaded 2 new photos</p>
-                            </div>
-                        </div>
-
-                        <div class="time-item">
-                            <div class="item-info">
-                                <div class="text-muted">
-                                    <small>30 minutes ago</small>
-                                </div>
-                                <p>
-                                    <a href="" class="text-info">Lorem</a> commented your post.</p>
-                                <p>
-                                    <em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt
-                                        euismod. "</em>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="time-item">
-                            <div class="item-info">
-                                <div class="text-muted">
-                                    <small>59 minutes ago</small>
-                                </div>
-                                <p>
-                                    <a href="" class="text-info">Jessi</a> attended a meeting with
-                                    <a href="#" class="text-success">John Doe</a>.</p>
-                                <p>
-                                    <em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt
-                                        euismod. "</em>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- end col -->
     </div>
 </div>
-<script>
+<script src="Content/assets/pages/jquery.dashboard.js"></script>
+
+<script type="text/javascript">
     $(document).ready(function () {
         $(this).scrollTop(0);
+    });
+
+    jQuery(document).ready(function ($) {
+        $('.counter').counterUp({
+            delay: 100,
+            time: 1200
+        });
+
+        $(".knob").knob();
+
     });
 </script>
