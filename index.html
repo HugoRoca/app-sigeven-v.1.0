@@ -6,126 +6,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>.::. SIGEVEN .::. GESTION DE VENTAS</title>
-  <link rel="stylesheet" href="Content/bootstrap.css">
-  <link rel="stylesheet" href="Content/admin/metisMenu.min.css">
-  <link rel="stylesheet" href="Content/admin/sb-admin-2.css">
-  <link rel="stylesheet" href="Content/admin/morris.css">
-  <link rel="stylesheet" href="Content/admin/dataTables.bootstrap.css">
-  <link rel="stylesheet" href="Content/admin/dataTables.responsive.css">
-
-  <link rel="stylesheet" href="Content/angular-toastr.css">
-  <link rel="stylesheet" href="Content/font-awesome.css">
-  <link rel="stylesheet" href="Content/loading-bar.css">
-  <link rel="stylesheet" href="Content/style.css">
 
   <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="Content/assets/plugins/morris/morris.css">
+
+  <link href="Content/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/core.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/components.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/icons.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/pages.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+  <script src="assets/js/modernizr.min.js"></script>
 </head>
 
-<body ng-controller="applicationController as vm">
-
-  <div id="wrapper">
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">SIGEVEN - Gestión de ventas</a>
+<body ng-controller="applicationController as vm" class="fixed-left">
+  <div class="wrapper">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="text-center">
+          <a href="index.html" class="logo">
+            <i class="icon-magnet icon-c-logo"></i>
+            <span>Ub
+              <i class="md md-album"></i>ld</span>
+          </a>
+          <!-- Image Logo here -->
+          <!--<a href="index.html" class="logo">-->
+          <!--<i class="icon-c-logo"> <img src="assets/images/logo_sm.png" height="42"/> </i>-->
+          <!--<span><img src="assets/images/logo_light.png" height="20"/></span>-->
+          <!--</a>-->
+        </div>
       </div>
 
-      <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white !important;">
-            <i class="fa fa-user fa-fw"></i>
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-user">
-            <li>
-              <a href="" ng-click="vm.logout()">
-                <i class="fa fa-sign-out fa-fw"></i> Salir</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="">
+            <div class="pull-left">
+              <button class="button-menu-mobile open-left waves-effect waves-light">
+                <i class="md md-menu"></i>
+              </button>
+              <span class="clearfix"></span>
+            </div>
 
-      <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-          <ul class="nav" id="side-menu">
-            <li class="sidebar-search">
-              <div class="input-group custom-search-form">
-                <input type="text" class="form-control" placeholder="Buscar...">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-              </div>
-              <!-- /input-group -->
-            </li>
-            <li>
-              <a href="" ui-sref="portal" ui-sref-active="active">
-                <i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-            </li>
-            <li>
-              <a href="" ui-sref="articulo" ui-sref-active="active">
-                <i class="fa fa-cart-plus fa-fw"></i> Artículo</a>
-            </li>
-            <li>
-              <a href="" ui-sref="gasto" ui-sref-active="active">
-                <i class="fa fa-money fa-fw"></i> Gastos</a>
-            </li>
-            <li>
-              <a href="" ui-sref="proveedor" ui-sref-active="active">
-                <i class="fa fa-bus fa-fw"></i> Proveedor</a>
-            </li>
-            <li>
-              <a href="" ui-sref="venta" ui-sref-active="active">
-                <i class="fa fa-shopping-basket fa-fw"></i> Venta</a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Consultas
-                <span class="fa arrow"></span>
+            <ul class="nav navbar-nav navbar-right pull-right">
+              <li class="dropdown top-menu-item-xs">
+                <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                  <img src="Content/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="ti-power-off m-r-10 text-danger"></i> Salir</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="left side-menu">
+      <div class="sidebar-inner slimscrollleft">
+        <div id="sidebar-menu">
+          <ul>
+            <li class="text-muted menu-title">Opciones</li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" ui-sref="portal" ui-sref-active="active" class="waves-effect">
+                <i class="ti-home"></i>
+                <span> Dashboard </span>
               </a>
-              <ul class="nav nav-second-level">
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" ui-sref="articulo" ui-sref-active="active" class="waves-effect">
+                <i class="ti-shopping-cart"></i>
+                <span> Artículo </span>
+              </a>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" ui-sref="gasto" ui-sref-active="active" class="waves-effect">
+                <i class="ti-share"></i>
+                <span> Gastos </span>
+              </a>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" ui-sref="proveedor" ui-sref-active="active" class="waves-effect">
+                <i class="ti-gift"></i>
+                <span> Proveedor </span>
+              </a>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" ui-sref="venta" ui-sref-active="active" class="waves-effect">
+                <i class="ti-bar-chart"></i>
+                <span> Ventas </span>
+              </a>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" class="waves-effect">
+                <i class="ti-files"></i>
+                <span> Consultas </span>
+                <span class="menu-arrow"></span>
+              </a>
+              <ul class="list-unstyled">
                 <li>
                   <a href="" ui-sref="consultaVenta" ui-sref-active="active">Ventas</a>
                 </li>
                 <li>
-                  <a href="" ui-sref="consultaProveedor" ui-sref-active="active">Proveedor</a>
+                  <a href="" ui-sref="consultaGasto" ui-sref-active="active">Gastos</a>
                 </li>
                 <li>
-                  <a href="" ui-sref="consultaGasto" ui-sref-active="active">Gastos</a>
+                  <a href="" ui-sref="consultaProveedor" ui-sref-active="active">Proveedor</a>
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="" ui-sref="otro" ui-sref-active="active">
-                <i class="fa fa-table fa-fw"></i> Otros</a>
+            <li class="has_sub">
+              <a href="javascript:void(0);" ui-sref="otro" ui-sref-active="active" class="waves-effect">
+                <i class="ti-pencil-alt"></i>
+                <span> Otros </span>
+              </a>
             </li>
           </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Inicia contenedor -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+      <div class="content">
+        <div class="container">
+          <div ui-view></div>
         </div>
       </div>
-    </nav>
-    <div id="page-wrapper">
-      <div ui-view></div>
+      <footer class="footer text-right">
+        © 2016. All rights reserved.
+      </footer>
     </div>
   </div>
 
+  <script>
+    var resizefunc = [];
+  </script>
+
+  <script src="Content/assets/js/jquery.min.js"></script>
+  <script src="Content/assets/js/bootstrap.min.js"></script>
+  <script src="Content/assets/js/detect.js"></script>
+  <script src="Content/assets/js/fastclick.js"></script>
+  <script src="Content/assets/js/jquery.slimscroll.js"></script>
+  <script src="Content/assets/js/jquery.blockUI.js"></script>
+  <script src="Content/assets/js/waves.js"></script>
+  <script src="Content/assets/js/wow.min.js"></script>
+  <script src="Content/assets/js/jquery.nicescroll.js"></script>
+  <script src="Content/assets/js/jquery.scrollTo.min.js"></script>
+
+  <script src="Content/assets/js/jquery.core.js"></script>
+  <script src="Content/assets/js/jquery.app.js"></script>
+  <script src="Content/assets/plugins/morris/morris.min.js"></script>
+  <script src="Content/assets/plugins/raphael/raphael-min.js"></script>
+
   <script src="Scripts/angular.js"></script>
-  <script src="Scripts/jquery.js"></script>
-  <script src="Scripts/bootstrap.js"></script>
   <script src="Scripts/bootbox.js"></script>
-  <script src="Scripts/admin/metisMenu.js"></script>
-  <script src="Scripts/admin/raphael.js"></script>
-  <script src="Scripts/admin/morris.js"></script>
-  <script src="Scripts/admin/jquery.dataTables.js"></script>
-  <script src="Scripts/admin/dataTables.bootstrap.js"></script>
-  <script src="Scripts/admin/dataTables.responsive.js"></script>
-  <script src="Scripts/admin/morris-data.js"></script>
-  <script src="Scripts/admin/sb-admin-2.js"></script>
   <script src="Scripts/jquery.mask.js"></script>
   <script src="Scripts/log.js"></script>
   <script src="Scripts/modules/angular-animate.js"></script>
@@ -136,14 +186,6 @@
   <script src="Scripts/modules/loading-bar.js"></script>
   <script src="Scripts/modules/ui-bootstrap-tpls.js"></script>
   <script src="Scripts/utils.js"></script>
-
-  <script src="Scripts/admin/flot/excanvas.min.js"></script>
-  <script src="Scripts/admin/flot/jquery.flot.js"></script>
-  <script src="Scripts/admin/flot/jquery.flot.pie.js"></script>
-  <script src="Scripts/admin/flot/jquery.flot.resize.js"></script>
-  <script src="Scripts/admin/flot/jquery.flot.time.js"></script>
-  <script src="Scripts/admin/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-
   <!-- scripts funcionamiento -->
   <script src="App/app.js"></script>
   <script src="App/shared/configuration.service.js"></script>

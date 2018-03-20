@@ -21,7 +21,7 @@
     function listaTopVenta() {
       dataService.getData('Server/venta_listaPorSemana.php').then(function (data) {
         if (data.data.length > 0) {
-          Morris.Bar({
+          /*Morris.Bar({
             element: 'ventaSemana',
             data: data.data,
             xkey: 'y',
@@ -29,7 +29,7 @@
             labels: ['Ventas', 'Gastos'],
             hideHover: 'auto',
             resize: true
-          });
+          });*/
         } else {
           toastr.warning('No hay datos', 'Dashboard');
         }
@@ -42,7 +42,7 @@
       dataService.getData('Server/articulo_top.php').then(function (data) {
         var data = data.data;
         if (data.length > 0) {
-          var plotObj = $.plot($("#articulosMasVendidos"), data, {
+          /*var plotObj = $.plot($("#articulosMasVendidos"), data, {
             series: {
               pie: {
                 show: true
@@ -60,7 +60,7 @@
               },
               defaultTheme: false
             }
-          });
+          });*/
         }
       }, function (error) {
         console.log(error);

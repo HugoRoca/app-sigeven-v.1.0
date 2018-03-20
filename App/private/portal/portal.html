@@ -1,121 +1,144 @@
 <div ng-controller="portalController as vm">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+        <div class="col-sm-12">
+            <h4 class="page-title">Dashboard </h4>
+            <p class="text-muted page-title-alt">Bienvenido al panel de SIGEVEN!</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+            <div class="widget-panel widget-style-2 bg-white">
+                <i class="md md-attach-money text-primary"></i>
+                <h2 class="m-0 text-dark counter font-600">50568</h2>
+                <div class="text-muted m-t-5">Total Revenue</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="widget-panel widget-style-2 bg-white">
+                <i class="md md-add-shopping-cart text-pink"></i>
+                <h2 class="m-0 text-dark counter font-600">1256</h2>
+                <div class="text-muted m-t-5">Sales</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="widget-panel widget-style-2 bg-white">
+                <i class="md md-store-mall-directory text-info"></i>
+                <h2 class="m-0 text-dark counter font-600">18</h2>
+                <div class="text-muted m-t-5">Stores</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="widget-panel widget-style-2 bg-white">
+                <i class="md md-account-child text-custom"></i>
+                <h2 class="m-0 text-dark counter font-600">8564</h2>
+                <div class="text-muted m-t-5">Users</div>
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Artículos mas vendidos
-                </div>
-                <div class="panel-body">
-                    <div class="flot-chart">
-                        <div class="flot-chart-content" id="articulosMasVendidos"></div>
+        <div class="col-lg-12">
+            <div class="card-box">
+                <h4 class="text-dark header-title m-t-0">Total Revenue</h4>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="text-center">
+                            <ul class="list-inline chart-detail-list">
+                                <li>
+                                    <h5>
+                                        <i class="fa fa-circle m-r-5" style="color: #36404a;"></i>Desktops</h5>
+                                </li>
+                                <li>
+                                    <h5>
+                                        <i class="fa fa-circle m-r-5" style="color: #5d9cec;"></i>Tablets</h5>
+                                </li>
+                                <li>
+                                    <h5>
+                                        <i class="fa fa-circle m-r-5" style="color: #bbbbbb;"></i>Mobiles</h5>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="morris-area-with-dotted" style="height: 300px;"></div>
+
                     </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <p class="font-600">iMacs
+                            <span class="text-primary pull-right">80%</span>
+                        </p>
+                        <div class="progress m-b-30">
+                            <div class="progress-bar progress-bar-primary progress-animated wow animated" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 80%">
+                            </div>
+                            <!-- /.progress-bar .progress-bar-danger -->
+                        </div>
+                        <!-- /.progress .no-rounded -->
+
+                        <p class="font-600">iBooks
+                            <span class="text-pink pull-right">50%</span>
+                        </p>
+                        <div class="progress m-b-30">
+                            <div class="progress-bar progress-bar-pink progress-animated wow animated" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 50%">
+                            </div>
+                            <!-- /.progress-bar .progress-bar-pink -->
+                        </div>
+                        <!-- /.progress .no-rounded -->
+
+                        <p class="font-600">iPhone 5s
+                            <span class="text-info pull-right">70%</span>
+                        </p>
+                        <div class="progress m-b-30">
+                            <div class="progress-bar progress-bar-info progress-animated wow animated" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 70%">
+                            </div>
+                            <!-- /.progress-bar .progress-bar-info -->
+                        </div>
+                        <!-- /.progress .no-rounded -->
+
+                        <p class="font-600">iPhone 6
+                            <span class="text-warning pull-right">65%</span>
+                        </p>
+                        <div class="progress m-b-30">
+                            <div class="progress-bar progress-bar-warning progress-animated wow animated" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 65%">
+                            </div>
+                            <!-- /.progress-bar .progress-bar-warning -->
+                        </div>
+                        <!-- /.progress .no-rounded -->
+
+                        <p class="font-600">iPhone 6s
+                            <span class="text-success pull-right">40%</span>
+                        </p>
+                        <div class="progress m-b-30">
+                            <div class="progress-bar progress-bar-success progress-animated wow animated" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 40%">
+                            </div>
+                            <!-- /.progress-bar .progress-bar-success -->
+                        </div>
+                        <!-- /.progress .no-rounded -->
+
+
+                    </div>
+
+
+
                 </div>
+
+                <!-- end row -->
+
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Resumen de ventas ultimos 4 días
-                </div>
-                <div class="panel-body">
-                    <div id="ventaSemana"></div>
-                </div>
-            </div>
+
         </div>
 
-        <!--div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>New Comments!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>New Tasks!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-shopping-cart fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
-                            <div>New Orders!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-support fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Support Tickets!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div-->
+
+
     </div>
 </div>
 <script>

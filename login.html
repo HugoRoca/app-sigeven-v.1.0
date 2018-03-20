@@ -5,54 +5,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>.::. SIGEVEN .::. GESTION DE VENTAS</title>
-  <link rel="stylesheet" href="Content/bootstrap.css">
-  <link rel="stylesheet" href="Content/admin/sb-admin-2.css">
 
-  <link rel="stylesheet" href="Content/angular-toastr.css">
-  <link rel="stylesheet" href="Content/font-awesome.css">
-  <link rel="stylesheet" href="Content/loading-bar.css">
-  <link rel="stylesheet" href="Content/style.css">
+  <title>.::. SIGEVEN .::. GESTION DE VENTAS</title>
 
   <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="Content/assets/css/bootstrap.min.css">
+  <link href="Content/assets/css/core.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/components.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/icons.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/pages.css" rel="stylesheet" type="text/css" />
+  <link href="Content/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="Content/angular-toastr.css">
+  <link rel="stylesheet" href="Content/loading-bar.css">
+
+  <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="assets/js/modernizr.min.js"></script>
+
 </head>
 
 <body ng-controller="loginController as vm">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <div class="login-panel panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Login</h3>
+  <div class="account-pages"></div>
+  <div class="clearfix"></div>
+  <div class="wrapper-page">
+    <div class=" card-box">
+      <div class="panel-heading">
+        <h3 class="text-center"> Iniciar Sesión en
+          <strong class="text-custom">SIGEVEN</strong>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal m-t-20" name="frmLogin" ng-submit="vm.login(frmLogin.$valid)" novalidate>
+          <div class="form-group ">
+            <div class="col-xs-12">
+              <input class="form-control" type="text" required="" placeholder="Usuario" autofocus ng-model="vm.usuario.cUsuario" required>
+            </div>
           </div>
-          <div class="panel-body">
-            <img src="Content/img/limpieza3.png" alt="logo" class="img-responsive" style="margin: 0 auto !important;">
-            <p>&nbsp;</p>
-            <form role="form" name="frmLogin" ng-submit="vm.login(frmLogin.$valid)" novalidate>
-              <fieldset>
-                <div class="form-group">
-                  <input class="form-control" placeholder="Usuario..." name="user" type="text" autofocus ng-model="vm.usuario.cUsuario" required>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" placeholder="Password" name="password" type="password" ng-model="vm.usuario.cContrasenia" required>
-                </div>
-                <!-- Change this to a button or input when using this as a form -->
-                <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
-              </fieldset>
-            </form>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <input class="form-control" type="password" required="" placeholder="Password" ng-model="vm.usuario.cContrasenia" required>
+            </div>
           </div>
-        </div>
+          <div class="form-group text-center m-t-40">
+            <div class="col-xs-12">
+              <button class="btn btn-info btn-block text-uppercase waves-effect waves-light" type="submit">Entrar</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 
+  <script>
+    var resizefunc = [];
+  </script>
+
+  <script src="Content/assets/js/jquery.min.js"></script>
+  <script src="Content/assets/js/bootstrap.min.js"></script>
+  <script src="Content/assets/js/detect.js"></script>
+  <script src="Content/assets/js/fastclick.js"></script>
+  <script src="Content/assets/js/jquery.slimscroll.js"></script>
+  <script src="Content/assets/js/jquery.blockUI.js"></script>
+  <script src="Content/assets/js/waves.js"></script>
+  <script src="Content/assets/js/wow.min.js"></script>
+  <script src="Content/assets/js/jquery.nicescroll.js"></script>
+  <script src="Content/assets/js/jquery.scrollTo.min.js"></script>
+  <script src="Content/assets/js/jquery.core.js"></script>
+  <script src="Content/assets/js/jquery.app.js"></script>
+  <!--  -->
   <script src="Scripts/angular.js"></script>
-  <script src="Scripts/jquery.js"></script>
-  <script src="Scripts/bootstrap.js"></script>
   <script src="Scripts/bootbox.js"></script>
   <script src="Scripts/jquery.mask.js"></script>
   <script src="Scripts/log.js"></script>
+  <script src="Scripts/utils.js"></script>
   <script src="Scripts/modules/angular-animate.js"></script>
   <script src="Scripts/modules/angular-file-upload.js"></script>
   <script src="Scripts/modules/angular-local-storage.js"></script>
@@ -60,7 +90,6 @@
   <script src="Scripts/modules/angular-ui-router.js"></script>
   <script src="Scripts/modules/loading-bar.js"></script>
   <script src="Scripts/modules/ui-bootstrap-tpls.js"></script>
-  <script src="Scripts/utils.js"></script>
   <!-- scripts funcionamiento -->
   <script src="App/app.js"></script>
   <script src="App/shared/configuration.service.js"></script>
