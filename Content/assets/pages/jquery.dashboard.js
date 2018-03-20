@@ -51,18 +51,6 @@
 
 
     Dashboard1.prototype.init = function() {
-
-        //creating Stacked chart
-        var $stckedData  = [
-            { y: 'Plato Pega Mosca', a: 45, b: 180},
-            { y: 'Poet 648 ml', a: 75,  b: 65},
-            { y: 'Guantes simples', a: 100, b: 90},
-            { y: 'Quitasarro asylum ', a: 75,  b: 65},
-            { y: 'Aciso muritiaco', a: 100, b: 90},
-            { y: 'lajsdlasdjaslkdjas', a: 100, b: 90}
-        ];
-        this.createStackedChart('morris-bar-stacked', $stckedData, 'y', ['a', 'b'], ['Stock', 'Ventas'], ['#7e57c2', '#b39ddb']);
-
         //create line chart
         var $data  = [
             { y: '2008', a: 50, b: 0 },

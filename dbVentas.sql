@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.24-log : Database - dbventas
+MySQL - 5.5.5-10.1.30-MariaDB : Database - dbventas
 *********************************************************************
 */
 
@@ -38,11 +38,7 @@ CREATE TABLE `articulo` (
 
 /*Data for the table `articulo` */
 
-LOCK TABLES `articulo` WRITE;
-
-insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'Escoba clorinda chica',3,6,6,0,5.6,1,'hroca','2018-03-14 18:06:41',NULL,NULL),(2,'Escobas madera colores',6,6,18,0,4.5,1,'hroca','2018-03-14 22:27:31',NULL,NULL),(3,'Escobas italiana',3,6,18,0,5,1,'hroca','2018-03-14 22:28:05',NULL,NULL),(4,'Escobas negro/rojo',3,6,18,0,5,1,'hroca','2018-03-14 22:30:05',NULL,NULL),(5,'Escoba negro/azul',3,6,18,0,4.5,1,'hroca','2018-03-14 22:30:34',NULL,NULL),(6,'Escoba Tula',3,6,18,0,3.6,1,'hroca','2018-03-14 22:31:06',NULL,NULL),(7,'Escobilla para botella',1,6,18,0,1.5,1,'hroca','2018-03-14 22:31:35',NULL,NULL),(8,'Recogedor de plastico',12,6,18,0,3.5,1,'hroca','2018-03-14 22:32:15',NULL,NULL),(9,'Recogedor metal',6,6,18,0,5,1,'hroca','2018-03-14 22:32:47',NULL,NULL),(10,'Isopo de Water con embase',4,6,18,0,3.5,1,'hroca','2018-03-14 22:34:32',NULL,NULL),(11,'Guantes reiu',2,6,18,0,1.8,1,'hroca','2018-03-14 22:35:57',NULL,NULL),(12,'Guantes nicson',4,7,19,0,4,1,'hroca','2018-03-14 22:38:30',NULL,NULL),(13,'Guante Koppas',1,7,18,0,3,1,'hroca','2018-03-14 22:39:01',NULL,NULL),(14,'Guantes simples',12,7,18,0,2.5,1,'hroca','2018-03-14 22:39:45',NULL,NULL),(15,'Cabezal triggerSpragers',2,6,18,0,2.3,1,'hroca','2018-03-14 22:40:26',NULL,NULL),(16,'Isopos para water',4,6,18,0,2,1,'hroca','2018-03-14 22:41:34',NULL,NULL),(17,'Tinte para ropa azul/negro',9,4,18,0,1,1,'hroca','2018-03-14 22:42:26',NULL,NULL),(18,'Galon pino',6,2,18,0,5.5,1,'hroca','2018-03-14 22:42:54',NULL,NULL),(19,'Galon Quitasarro',1,2,18,0,6,1,'hroca','2018-03-14 22:43:49',NULL,NULL),(20,'Galon perfumador morado',4,2,18,0,5.5,1,'hroca','2018-03-14 22:44:08',NULL,NULL),(21,'Galon perfumador rosado',6,2,18,0,5.5,1,'hroca','2018-03-14 22:44:44',NULL,NULL),(22,'GalÃ³n perfumador celeste',1,2,18,0,5.65,1,'hroca','2018-03-14 22:45:30',NULL,NULL),(23,'GalÃ³n creso',3,2,18,0,6.5,1,'hroca','2018-03-14 22:47:43',NULL,NULL),(24,'Ayudin Sapolio 900gr',6,8,1,0,5,1,'hroca','2018-03-14 22:50:58',NULL,NULL),(25,'Ayudin Sapolio 180gr',12,8,1,0,1.7,1,'hroca','2018-03-14 22:51:29',NULL,NULL),(26,'LejÃ­a clorox',15,4,4,0,1.7,1,'hroca','2018-03-14 22:52:38',NULL,NULL);
-
-UNLOCK TABLES;
+insert  into `articulo`(`Id`,`cDescripcion`,`nStock`,`nTipo`,`nMarca`,`nPrecioCompra`,`nPrecioVenta`,`nEstado`,`cUserReg`,`dFechaReg`,`cUserAct`,`dFechaAct`) values (1,'Escoba clorinda chica',2,6,6,0,5.6,1,'hroca','2018-03-14 18:06:41',NULL,NULL),(2,'Escobas madera colores',6,6,18,0,4.5,1,'hroca','2018-03-14 22:27:31',NULL,NULL),(3,'Escobas italiana',3,6,18,0,5,1,'hroca','2018-03-14 22:28:05',NULL,NULL),(4,'Escobas negro/rojo',3,6,18,0,5,1,'hroca','2018-03-14 22:30:05',NULL,NULL),(5,'Escoba negro/azul',2,6,18,0,4.5,1,'hroca','2018-03-14 22:30:34',NULL,NULL),(6,'Escoba Tula',3,6,18,0,3.6,1,'hroca','2018-03-14 22:31:06',NULL,NULL),(7,'Escobilla para botella',1,6,18,0,1.5,1,'hroca','2018-03-14 22:31:35',NULL,NULL),(8,'Recogedor de plastico',12,6,18,0,3.5,1,'hroca','2018-03-14 22:32:15',NULL,NULL),(9,'Recogedor metal',6,6,18,0,5,1,'hroca','2018-03-14 22:32:47',NULL,NULL),(10,'Isopo de Water con embase',4,6,18,0,3.5,1,'hroca','2018-03-14 22:34:32',NULL,NULL),(11,'Guantes reiu',2,6,18,0,1.8,1,'hroca','2018-03-14 22:35:57',NULL,NULL),(12,'Guantes nicson',4,7,19,0,4,1,'hroca','2018-03-14 22:38:30',NULL,NULL),(13,'Guante Koppas',1,7,18,0,3,1,'hroca','2018-03-14 22:39:01',NULL,NULL),(14,'Guantes simples',12,7,18,0,2.5,1,'hroca','2018-03-14 22:39:45',NULL,NULL),(15,'Cabezal triggerSpragers',2,6,18,0,2.3,1,'hroca','2018-03-14 22:40:26',NULL,NULL),(16,'Isopos para water',4,6,18,0,2,1,'hroca','2018-03-14 22:41:34',NULL,NULL),(17,'Tinte para ropa azul/negro',9,4,18,0,1,1,'hroca','2018-03-14 22:42:26',NULL,NULL),(18,'Galon pino',6,2,18,0,5.5,1,'hroca','2018-03-14 22:42:54',NULL,NULL),(19,'Galon Quitasarro',1,2,18,0,6,1,'hroca','2018-03-14 22:43:49',NULL,NULL),(20,'Galon perfumador morado',4,2,18,0,5.5,1,'hroca','2018-03-14 22:44:08',NULL,NULL),(21,'Galon perfumador rosado',6,2,18,0,5.5,1,'hroca','2018-03-14 22:44:44',NULL,NULL),(22,'GalÃ³n perfumador celeste',0,2,18,0,5.65,1,'hroca','2018-03-14 22:45:30',NULL,NULL),(23,'GalÃ³n creso',3,2,18,0,6.5,1,'hroca','2018-03-14 22:47:43',NULL,NULL),(24,'Ayudin Sapolio 900gr',6,8,1,0,5,1,'hroca','2018-03-14 22:50:58',NULL,NULL),(25,'Ayudin Sapolio 180gr',12,8,1,0,1.7,1,'hroca','2018-03-14 22:51:29',NULL,NULL),(26,'LejÃ­a clorox',15,4,4,0,1.7,1,'hroca','2018-03-14 22:52:38',NULL,NULL);
 
 /*Table structure for table `articuloimagen` */
 
@@ -59,10 +55,6 @@ CREATE TABLE `articuloimagen` (
 
 /*Data for the table `articuloimagen` */
 
-LOCK TABLES `articuloimagen` WRITE;
-
-UNLOCK TABLES;
-
 /*Table structure for table `catalogocodigo` */
 
 DROP TABLE IF EXISTS `catalogocodigo`;
@@ -76,11 +68,7 @@ CREATE TABLE `catalogocodigo` (
 
 /*Data for the table `catalogocodigo` */
 
-LOCK TABLES `catalogocodigo` WRITE;
-
 insert  into `catalogocodigo`(`Id`,`cNomCod`,`cValor`,`nEstado`) values (1000,'perfumadores',1000,1),(1000,'Veneno',1,1),(2000,'MARCAS',2000,1),(2000,'SAPOLIO',1,1),(1000,'Perfumador',2,1),(1000,'Mascotas',3,1),(2000,'Ayudin',2,1),(2000,'NowClin',3,1),(2000,'Clorox',4,1),(2000,'Clorandina',5,1),(2000,'Clorinda',6,1),(2000,'Poet',7,1),(1000,'Aseo Personal',4,1),(2000,'RaidMax',8,1),(2000,'Schick',9,1),(2000,'Dento',11,1),(2000,'Colgate',10,1),(2000,'Santiago',12,1),(2000,'Glade',13,1),(1000,'Pastillas',5,1),(2000,'Amigo',14,1),(2000,'Kanino',15,1),(2000,'Practican',16,1),(2000,'Doky\'s',17,1),(1000,'Escobas',6,1),(2000,'Sin Marca',18,1),(1000,'Guantes',7,1),(2000,'Nicson',19,1),(1000,'Cocina',8,1);
-
-UNLOCK TABLES;
 
 /*Table structure for table `gasto` */
 
@@ -94,15 +82,11 @@ CREATE TABLE `gasto` (
   `cUsuReg` varchar(50) NOT NULL,
   `dFechaReg` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `gasto` */
 
-LOCK TABLES `gasto` WRITE;
-
-insert  into `gasto`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-14',1,1.7,'hroca','2018-03-14 22:54:01');
-
-UNLOCK TABLES;
+insert  into `gasto`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-14',1,1.7,'hroca','2018-03-14 22:54:01'),(2,'2018-03-20',1,2,'hroca','2018-03-20 16:26:02');
 
 /*Table structure for table `gastodetalle` */
 
@@ -118,11 +102,7 @@ CREATE TABLE `gastodetalle` (
 
 /*Data for the table `gastodetalle` */
 
-LOCK TABLES `gastodetalle` WRITE;
-
-insert  into `gastodetalle`(`nIdGasto`,`cDescripcion`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'tripita',1.7,'hroca','2018-03-14 22:54:01');
-
-UNLOCK TABLES;
+insert  into `gastodetalle`(`nIdGasto`,`cDescripcion`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'tripita',1.7,'hroca','2018-03-14 22:54:01'),(2,'canchita',2,'hroca','2018-03-20 16:26:02');
 
 /*Table structure for table `proveedor` */
 
@@ -141,10 +121,6 @@ CREATE TABLE `proveedor` (
 
 /*Data for the table `proveedor` */
 
-LOCK TABLES `proveedor` WRITE;
-
-UNLOCK TABLES;
-
 /*Table structure for table `proveedordetalle` */
 
 DROP TABLE IF EXISTS `proveedordetalle`;
@@ -160,10 +136,6 @@ CREATE TABLE `proveedordetalle` (
 
 /*Data for the table `proveedordetalle` */
 
-LOCK TABLES `proveedordetalle` WRITE;
-
-UNLOCK TABLES;
-
 /*Table structure for table `usuario` */
 
 DROP TABLE IF EXISTS `usuario`;
@@ -178,11 +150,7 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
-LOCK TABLES `usuario` WRITE;
-
 insert  into `usuario`(`Id`,`cNomUsu`,`cContrasenia`,`cNombres`) values (1,'hroca','ventas2018','Hugo Antonio Roca Espinoza'),(2,'jchavez','ventas2018',NULL);
-
-UNLOCK TABLES;
 
 /*Table structure for table `venta` */
 
@@ -196,15 +164,11 @@ CREATE TABLE `venta` (
   `cUsuReg` varchar(50) NOT NULL,
   `dFechaReg` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `venta` */
 
-LOCK TABLES `venta` WRITE;
-
-insert  into `venta`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-14',2,7.9,'hroca','2018-03-14 22:53:32');
-
-UNLOCK TABLES;
+insert  into `venta`(`Id`,`dFecha`,`nCantidad`,`nTotal`,`cUsuReg`,`dFechaReg`) values (1,'2018-03-14',2,7.9,'hroca','2018-03-14 22:53:32'),(2,'2018-03-20',2,10.1,'hroca','2018-03-20 16:25:49'),(3,'2018-03-19',1,5.65,'hroca','2018-03-20 16:26:13');
 
 /*Table structure for table `ventadetalle` */
 
@@ -223,11 +187,7 @@ CREATE TABLE `ventadetalle` (
 
 /*Data for the table `ventadetalle` */
 
-LOCK TABLES `ventadetalle` WRITE;
-
-insert  into `ventadetalle`(`nIdVenta`,`nIdArticulo`,`nCantidad`,`nPrecio`,`cUsuReg`,`dFechaReg`) values (1,15,1,2.3,'hroca','2018-03-14 22:53:32'),(1,1,1,5.6,'hroca','2018-03-14 22:53:32');
-
-UNLOCK TABLES;
+insert  into `ventadetalle`(`nIdVenta`,`nIdArticulo`,`nCantidad`,`nPrecio`,`cUsuReg`,`dFechaReg`) values (1,15,1,2.3,'hroca','2018-03-14 22:53:32'),(1,1,1,5.6,'hroca','2018-03-14 22:53:32'),(1,2,2,2.3,'hroca','2018-03-20 16:13:14'),(1,9,5,2.5,'hroca','2018-03-20 16:25:18'),(2,1,1,5.6,'hroca','2018-03-20 16:25:49'),(2,5,1,4.5,'hroca','2018-03-20 16:25:49'),(3,22,1,5.65,'hroca','2018-03-20 16:26:13');
 
 /* Procedure structure for procedure `Articulo_Actualiza_SP` */
 
@@ -448,6 +408,23 @@ BEGIN
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `Dashboard_Consulta_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Dashboard_Consulta_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Dashboard_Consulta_SP`()
+BEGIN
+  SELECT 
+	(SELECT COUNT(*) FROM articulo WHERE nEstado = 1) AS nArticulos,
+	(SELECT COUNT(*) FROM venta) AS nVentas,
+	(SELECT AVG(nTotal) FROM venta WHERE MONTH(dfechaReg) = MONTH(NOW())) AS nPromedioVentas,
+	(SELECT AVG(nTotal) FROM gasto WHERE MONTH(dfechaReg) = MONTH(NOW())) AS nPromedioGasto,
+	(SELECT MONTH(NOW())) AS cMes;
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `GastoDetalle_Consulta_SP` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `GastoDetalle_Consulta_SP` */;
@@ -513,44 +490,6 @@ BEGIN
 	
 	INSERT INTO gastoDetalle(nIdGasto, cDescripcion, nTotal, cUsuReg, dFechaReg)
 	VALUES (@nGasto, cDesc, nMontoTot, cUsu, NOW());	
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `Proveedor_Insertar_SP` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `Proveedor_Insertar_SP` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Proveedor_Insertar_SP`(
-  IN dFech DATE,
-  in cNomProv varchar(200),
-  in idArt int,
-  in nCant int,
-  in nPxC double,
-  in nPxV double,
-  in nPTotal double,  
-  IN cUsu VARCHAR(50)
-)
-BEGIN
-	set @contador = (select count(*) from proveedor where dFecha = dFech and cNomProveedor = cNomProv);
-	SET @nCodigo = 0;
-		
-	IF @contador = 0 THEN
-		insert into proveedor(cNomProveedor, nCantidad, nTotal, dFecha, dFechaReg, cUserReg)
-		values(cNomProv, nCant, nPTotal, dFech, now(), cUsu);
-	ELSE	
-		SET @nCodigo = (SELECT Id FROM proveedor WHERE dFecha = dFech AND cNomProveedor = cNomProv);
-		update proveedor set nCantidad = nCant, nTotal = nTotal + nPTotal where Id = @nCodigo;
-	END IF;	
-	
-	SET @nCodigo = (SELECT Id FROM proveedor WHERE dFecha = dFech AND cNomProveedor = cNomProv);
-	
-	insert into proveedorDetalle(nIdProveedor, nIdArticulo,nPrecioCompra, nPrecioVenta, nCantidad, nTotal)
-	values(@nCodigo, idArt, nPxC, nPxV, nCant, nPTotal);
-	
-	update articulo	set nStock = nStock + nCant, nPrecioCompra = nPxC, nPrecioVenta = nPxV where Id = idArt;
-	
 END */$$
 DELIMITER ;
 
@@ -628,6 +567,44 @@ BEGIN
   where dFecha between desde 
     and hasta 
   order by dFecha desc ;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `Proveedor_Insertar_SP` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `Proveedor_Insertar_SP` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `Proveedor_Insertar_SP`(
+  IN dFech DATE,
+  in cNomProv varchar(200),
+  in idArt int,
+  in nCant int,
+  in nPxC double,
+  in nPxV double,
+  in nPTotal double,  
+  IN cUsu VARCHAR(50)
+)
+BEGIN
+	set @contador = (select count(*) from proveedor where dFecha = dFech and cNomProveedor = cNomProv);
+	SET @nCodigo = 0;
+		
+	IF @contador = 0 THEN
+		insert into proveedor(cNomProveedor, nCantidad, nTotal, dFecha, dFechaReg, cUserReg)
+		values(cNomProv, nCant, nPTotal, dFech, now(), cUsu);
+	ELSE	
+		SET @nCodigo = (SELECT Id FROM proveedor WHERE dFecha = dFech AND cNomProveedor = cNomProv);
+		update proveedor set nCantidad = nCant, nTotal = nTotal + nPTotal where Id = @nCodigo;
+	END IF;	
+	
+	SET @nCodigo = (SELECT Id FROM proveedor WHERE dFecha = dFech AND cNomProveedor = cNomProv);
+	
+	insert into proveedorDetalle(nIdProveedor, nIdArticulo,nPrecioCompra, nPrecioVenta, nCantidad, nTotal)
+	values(@nCodigo, idArt, nPxC, nPxV, nCant, nPTotal);
+	
+	update articulo	set nStock = nStock + nCant, nPrecioCompra = nPxC, nPrecioVenta = nPxV where Id = idArt;
+	
 END */$$
 DELIMITER ;
 

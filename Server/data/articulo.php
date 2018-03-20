@@ -19,6 +19,16 @@ class Articulo{
     return json_encode($data);
   }
 
+  public function dashboardConsulta(){
+    $query = $this->db->prepare("call Dashboard_Consulta_SP");
+    $query->execute();
+    $data = array();
+    while($row = $query->fetch(PDO::FETCH_ASSOC)){
+      $data[] = $row;
+    }
+    return json_encode($data);
+  }
+
   public function listaPorIdArticulo($Id){
     $query = $this->db->prepare("call Articulo_ListaPorId_SP(?)");
     $query->bindparam(1, $Id);

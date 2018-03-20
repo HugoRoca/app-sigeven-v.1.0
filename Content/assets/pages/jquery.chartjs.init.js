@@ -192,7 +192,7 @@ File: Chartjs
         };
         this.respChart($("#radar"),'Radar',radarChart);
 
-        //Polar area chart
+        //Polar area chart 
         var polarChart = {
             datasets: [{
                 data: [

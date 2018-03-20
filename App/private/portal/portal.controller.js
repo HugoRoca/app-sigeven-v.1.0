@@ -10,18 +10,36 @@
   function portalController(configService, authenticationService, localStorageService, dataService, toastr, $state) {
     var vm = this;
     vm.mostrar = true;
+    vm.promedioVentas = 0;
+    vm.promedioGastos;
+    vm.totalArticulos;
+    vm.totalVentas;
 
     init();
 
     function init() {
       listaTopArticulo();
       listaTopVenta();
+      consulta();
+    }
+
+    function consulta() {
+      dataService.getData('Server/dashboard_consulta.php').then(function (data) {
+        if (data.data.length > 0) {
+          vm.promedioVentas = ponerADecimales(data.data[0].nPromedioVentas,2);
+          vm.promedioGastos = ponerADecimales(data.data[0].nPromedioGasto,2);;
+          vm.totalArticulos = data.data[0].nArticulos;
+          vm.totalVentas = data.data[0].nVentas;
+        }
+      }, function (error) {
+        console.log(error);
+      });
     }
 
     function listaTopVenta() {
       dataService.getData('Server/venta_listaPorSemana.php').then(function (data) {
         if (data.data.length > 0) {
-          /*Morris.Bar({
+          Morris.Bar({
             element: 'ventaSemana',
             data: data.data,
             xkey: 'y',
@@ -29,7 +47,7 @@
             labels: ['Ventas', 'Gastos'],
             hideHover: 'auto',
             resize: true
-          });*/
+          });
         } else {
           toastr.warning('No hay datos', 'Dashboard');
         }
@@ -41,8 +59,9 @@
     function listaTopArticulo() {
       dataService.getData('Server/articulo_top.php').then(function (data) {
         var data = data.data;
+        console.log(data);
         if (data.length > 0) {
-          /*var plotObj = $.plot($("#articulosMasVendidos"), data, {
+          var plotObj = $.plot($("#articulosMasVendidos"), data, {
             series: {
               pie: {
                 show: true
@@ -60,7 +79,7 @@
               },
               defaultTheme: false
             }
-          });*/
+          });
         }
       }, function (error) {
         console.log(error);

@@ -38,7 +38,8 @@
           <a href="index.html" class="logo">
             <i class="md-trending-up icon-c-logo"></i>
             <span>Sigeven
-              <i class="md md-trending-up"></i></span>
+              <i class="md md-trending-up"></i>
+            </span>
           </a>
           <!-- Image Logo here -->
           <!--<a href="index.html" class="logo">-->
@@ -202,7 +203,7 @@
   <script src="Content/assets/js/wow.min.js"></script>
   <script src="Content/assets/js/jquery.nicescroll.js"></script>
   <script src="Content/assets/js/jquery.scrollTo.min.js"></script>
-  
+
   <script src="Content/assets/plugins/peity/jquery.peity.min.js"></script>
 
   <script src="Content/assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
@@ -210,9 +211,16 @@
 
   <script src="Content/assets/plugins/morris/morris.min.js"></script>
   <script src="Content/assets/plugins/raphael/raphael-min.js"></script>
-  
+
   <script src="Content/assets/plugins/jquery-knob/jquery.knob.js"></script>
- 
+
+  <script src="Scripts/flot/excanvas.min.js"></script>
+  <script src="Scripts/flot/jquery.flot.js"></script>
+  <script src="Scripts/flot/jquery.flot.pie.js"></script>
+  <script src="Scripts/flot/jquery.flot.resize.js"></script>
+  <script src="Scripts/flot/jquery.flot.time.js"></script>
+  <script src="Scripts/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+
   <script src="Content/assets/js/jquery.core.js"></script>
   <script src="Content/assets/js/jquery.app.js"></script>
 
@@ -246,12 +254,10 @@
   <script src="App/private/consultas/consulta.controller.js"></script>
 
   <script>
-    $(function() {
+    $(function () {
       $(".knob").knob();
     });
-  </script>
 
-  <script>
     $(document).on('click', '.navbar-collapse.in', function (e) {
       if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
         $(this).collapse('hide');
