@@ -1,68 +1,66 @@
 <div ng-controller="consultaController as vm">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Consulta de Gastos</h1>
+        <div class="col-sm-12">
+            <h4 class="page-title">Consulta de Gastos</h4>
+            <p class="text-muted page-title-alt">
+                <a href="" ui-sref="portal" ui-sref-activate="activate">Dashboard</a> / Consulta de Gastos
+            </p>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Consulta de Gastos
-        </div>
-        <div class="panel-body">
-            <form class="form-horizontal" novalidate role="form">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Desde: </label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" ng-model="vm.Consulta.dDesde" id="txtFechaDesde">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Hasta: </label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" ng-model="vm.Consulta.dHasta" id="txtFechaHasta">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <p>
-                                <button class="btn btn-primary btn-block" ng-click="vm.buscaGastos()">
-                                    <span class="fa fa-search"></span> Buscar</button>
-                            </p>
+    <div class="card-box">
+        <form class="form-horizontal" novalidate role="form">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Desde: </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="vm.Consulta.dDesde" id="txtFechaDesde">
                         </div>
                     </div>
                 </div>
-            </form>
-            <div class="table-responsive">
-                <table class="table table table-hover table-bordered ">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>ID</th>
-                            <th>Fecha</th>
-                            <th>Total</th>
-                            <th>Usuario</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="item in vm.Gasto">
-                            <td>
-                                <button class="btn btn-danger btn-block" ng-click="vm.modalGasto(item.Id, item.nTotal, item.dFecha, item.nCantidad)">
-                                    <span class="fa fa-eye"></span>
-                                </button>
-                            </td>
-                            <td class="text-right">{{item.Id}}</td>
-                            <td>{{item.dFecha}}</td>
-                            <td class="text-right">{{item.nTotal | currency:'S/'}}</td>
-                            <td>{{item.cUsuReg}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Hasta: </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="vm.Consulta.dHasta" id="txtFechaHasta">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <p>
+                            <button class="btn btn-primary btn-block" ng-click="vm.buscaGastos()">
+                                <span class="fa fa-search"></span> Buscar</button>
+                        </p>
+                    </div>
+                </div>
             </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table table-hover table-bordered ">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in vm.Gasto">
+                        <td>
+                            <button class="btn btn-danger btn-block" ng-click="vm.modalGasto(item.Id, item.nTotal, item.dFecha, item.nCantidad)">
+                                <span class="fa fa-eye"></span>
+                            </button>
+                        </td>
+                        <td class="text-right">{{item.Id}}</td>
+                        <td>{{item.dFecha}}</td>
+                        <td class="text-right">{{item.nTotal | currency:'S/'}}</td>
+                        <td>{{item.cUsuReg}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <div id="GastoDetalle" class="modal fade" role="dialog">
@@ -90,7 +88,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td class="text-right"><b>Total: </b></td>
+                                        <td class="text-right">
+                                            <b>Total: </b>
+                                        </td>
                                         <td class="text-right">{{vm.Consulta.nTotal}}</td>
                                     </tr>
                                 </tfoot>

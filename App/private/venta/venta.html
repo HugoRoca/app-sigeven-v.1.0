@@ -1,117 +1,116 @@
 <div ng-controller="ventaController as vm">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Ventas</h1>
+        <div class="col-sm-12">
+            <h4 class="page-title">Ventas</h4>
+            <p class="text-muted page-title-alt">
+                <a href="" ui-sref="portal" ui-sref-activate="activate">Dashboard</a> / Ventas
+            </p>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Ventas
-        </div>
-        <div class="panel-body" style="margin:10px">
-            <form role="form" class="form-horizontal" novalidate name="frmVenta">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Fecha: </label>
-                            <div class="col-md-4">
-                                <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.fecha">
-                            </div>
+    <div class="card-box">
+        <form role="form" class="form-horizontal" novalidate name="frmVenta">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Fecha: </label>
+                        <div class="col-md-4">
+                            <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.fecha">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Artículo:</label>
-                            <div class="col-md-9">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Buscar..." disabled ng-model="vm.Ventas.cDescripcion">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" ng-click="vm.llamaModal()">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">PxV: </label>
-                            <div class="col-md-9">
-                                <div class="input-group">
-                                    <span class="input-group-addon">S/</span>
-                                    <input type="text" class="form-control text-right" ng-disabled="true" ng-model="vm.Ventas.nPrecioVenta">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label class="control-label col-md-5">Cantidad: </label>
-                            <div class="col-md-7">
-                                <input type="number" class="form-control text-right" id="txtCantidad" ng-model="vm.Ventas.nCantidad" min="0">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <p>
-                                <button type="button" class="btn btn-primary btn-block" ng-click="vm.agregaFila()">
-                                    <span class="fa fa-plus"></span> Agregar</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="table-responsive">
-                <table class="table table table-hover table-bordered " id="tblVentas">
-                    <thead>
-                        <tr>
-                            <th>Seleccionar</th>
-                            <th>ID</th>
-                            <th>Artículo</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tblTbody">
-                    </tbody>
-                    <tfoot>
-                        <td>
-                            <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
-                                <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
-                        </td>
-                        <td colspan="3" class="text-right">
-                            <h4>
-                                <b>Total:</b>
-                            </h4>
-                        </td>
-                        <td class="text-right">
-                            <h4>
-                                <b>{{vm.Ventas.nCantidadTotal}}</b>
-                            </h4>
-                        </td>
-                        <td class="text-right">
-                            <h4>
-                                <b>{{vm.Ventas.nTotalVenta | currency:'S/'}}</b>
-                            </h4>
-                        </td>
-                    </tfoot>
-                </table>
             </div>
             <div class="row">
-                <div class="col-md-offset-9 col-md-3">
-                    <p class="text-right">
-                        <button class="btn btn-success btn-block" type="button" ng-click="vm.insertarVenta()">
-                            <span class="fa fa-save"></span> Registrar Venta</button>
-                    </p>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Artículo:</label>
+                        <div class="col-md-9">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Buscar..." disabled ng-model="vm.Ventas.cDescripcion">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="vm.llamaModal()">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">PxV: </label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon">S/</span>
+                                <input type="text" class="form-control text-right" ng-disabled="true" ng-model="vm.Ventas.nPrecioVenta">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label col-md-5">Cantidad: </label>
+                        <div class="col-md-7">
+                            <input type="number" class="form-control text-right" id="txtCantidad" ng-model="vm.Ventas.nCantidad" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <p>
+                            <button type="button" class="btn btn-primary btn-block" ng-click="vm.agregaFila()">
+                                <span class="fa fa-plus"></span> Agregar</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table table-hover table-bordered " id="tblVentas">
+                <thead>
+                    <tr>
+                        <th>Seleccionar</th>
+                        <th>ID</th>
+                        <th>Artículo</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tblTbody">
+                </tbody>
+                <tfoot>
+                    <td>
+                        <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
+                            <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                    </td>
+                    <td colspan="3" class="text-right">
+                        <h4>
+                            <b>Total:</b>
+                        </h4>
+                    </td>
+                    <td class="text-right">
+                        <h4>
+                            <b>{{vm.Ventas.nCantidadTotal}}</b>
+                        </h4>
+                    </td>
+                    <td class="text-right">
+                        <h4>
+                            <b>{{vm.Ventas.nTotalVenta | currency:'S/'}}</b>
+                        </h4>
+                    </td>
+                </tfoot>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-9 col-md-3">
+                <p class="text-right">
+                    <button class="btn btn-success btn-block" type="button" ng-click="vm.insertarVenta()">
+                        <span class="fa fa-save"></span> Registrar Venta</button>
+                </p>
             </div>
         </div>
     </div>
+
     <div id="ArticulosVenta" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">

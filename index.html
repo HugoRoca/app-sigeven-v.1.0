@@ -60,7 +60,7 @@
             </div>
 
             <form role="search" class="navbar-left app-search pull-left hidden-xs">
-              <input type="text" placeholder="Search..." class="form-control">
+              <input type="text" placeholder="Buscar..." class="form-control">
               <a href="">
                 <i class="fa fa-search"></i>
               </a>
@@ -82,7 +82,7 @@
                   <img src="Content/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" ng-click="vm.logout()">
                       <i class="ti-power-off m-r-10 text-danger"></i> Salir</a>
                   </li>
                 </ul>
@@ -136,7 +136,7 @@
               </a>
             </li>
             <li class="has_sub">
-              <a href="javascript:void(0);" class="waves-effect">
+              <a href="" class="waves-effect">
                 <i class="ti-files"></i>
                 <span> Consultas </span>
                 <span class="menu-arrow"></span>
@@ -154,7 +154,7 @@
               </ul>
             </li>
             <li class="has_sub">
-              <a href="javascript:void(0);" ui-sref="otro" ui-sref-active="active" class="waves-effect">
+              <a href="" ui-sref="otro" ui-sref-active="active" class="waves-effect">
                 <i class="ti-pencil-alt"></i>
                 <span> Otros </span>
               </a>
