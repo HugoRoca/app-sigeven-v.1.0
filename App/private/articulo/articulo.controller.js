@@ -81,7 +81,7 @@
       }).then(function (marca) {
         vm.Marca = marca.data;
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -92,7 +92,7 @@
       }).then(function (tipo) {
         vm.Tipos = tipo.data
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -101,7 +101,7 @@
         vm.lista = data.data;
         vm.accion = 'nuevo';
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -121,7 +121,7 @@
               }).then(function (data) {
                 limpiador();
               }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
               });
             } else {
               dataService.postData('Server/articulo_actualizar.php', {
@@ -129,7 +129,7 @@
               }).then(function (data) {
                 limpiador();
               }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
               });
             }
           }
@@ -167,7 +167,7 @@
         vm.accion = 'editar';
         $('#Articulo').modal('show');
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -192,7 +192,7 @@
           }).then(function (data) {
             llenaArticulo();
           }, function (error) {
-            console.log(error);
+            authenticationService.errorValida(error);
           });
         }
       });

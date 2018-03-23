@@ -111,7 +111,7 @@
                             $state.go('portal');
                         }
                     }, function (error) {
-                        console.log(error);
+                        authenticationService.errorValida(error);
                     });
                 }
             });

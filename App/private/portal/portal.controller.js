@@ -32,7 +32,7 @@
           vm.totalVentas = data.data[0].nVentas;
         }
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -52,7 +52,7 @@
           toastr.warning('No hay datos', 'Dashboard');
         }
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -82,7 +82,7 @@
           });
         }
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 

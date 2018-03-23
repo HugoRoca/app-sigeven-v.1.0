@@ -75,7 +75,7 @@
         vm.Articulo = data.data;
         //$('#cmbArticulos').selectpicker('render');
       }, function (error) {
-        console.log(error);
+        authenticationService.errorValida(error);
       });
     }
 
@@ -162,7 +162,7 @@
               $state.go('portal');
             }
           }, function (error) {
-            console.log(error);
+            authenticationService.errorValida(error);
           });
         }
       });

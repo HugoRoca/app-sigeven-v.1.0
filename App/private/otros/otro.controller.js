@@ -39,7 +39,7 @@
             }).then(function (marca) {
                 vm.Marca = marca.data;
             }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
             });
         }
 
@@ -50,7 +50,7 @@
             }).then(function (tipo) {
                 vm.Tipos = tipo.data
             }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
             });
         }
 
@@ -68,7 +68,7 @@
                         llenaTipo();
                         nuevo();
                     }, function (error) {
-                        console.log(error);
+                        authenticationService.errorValida(error);
                     });
                 }
             });

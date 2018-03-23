@@ -53,7 +53,7 @@
                 vm.Consulta.dDesde = PasarFechaBarraMySql(vm.Consulta.dDesde);
                 vm.Consulta.dHasta = PasarFechaBarraMySql(vm.Consulta.dHasta);
             }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
             });
         }
 
@@ -66,7 +66,7 @@
                 vm.Consulta.dDesde = PasarFechaBarraMySql(vm.Consulta.dDesde);
                 vm.Consulta.dHasta = PasarFechaBarraMySql(vm.Consulta.dHasta);
             }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
             });
         }
 
@@ -79,7 +79,7 @@
                 vm.VentaDetalle = data.data;
                 $('#VentasDetalle').modal('show');
             }, function(error){
-                console.log(error);
+                authenticationService.errorValida(error);
             });            
         }
 
@@ -91,7 +91,7 @@
                 vm.GastoDetalle = data.data;
                 $('#GastoDetalle').modal('show');
             }, function(error){
-                console.log(error);
+                authenticationService.errorValida(error);
             });  
         }
     }

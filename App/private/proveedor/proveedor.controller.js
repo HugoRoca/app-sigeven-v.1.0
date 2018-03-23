@@ -60,7 +60,7 @@
                 vm.Articulo = data.data;
                 //$('#cmbArticulos').selectpicker('render');
             }, function (error) {
-                console.log(error);
+                authenticationService.errorValida(error);
             });
         }
 
@@ -174,7 +174,7 @@
                             toastr.error('Hubo un error al registrar. Comuníquese con el administrador de sistemas.','Error');
                         }
                     }, function (error) {
-                        console.log(error);
+                        authenticationService.errorValida(error);
                     });
                 }
             });
