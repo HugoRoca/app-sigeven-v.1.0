@@ -28,17 +28,14 @@
             userName: data.data[0].cNomUsu,
             id: data.data[0].Id
           });
-
           configService.setLogin(true);
           location.href = 'index.html#!/portal';
           toastr.success('Has ingresado correctamente al sistema.', 'BIENVENIDO');
-
         } else {
           toastr.warning('Usuario y/o contraseña incorrecto.', 'LOGIN');
         }
-
       }, function (error) {
-        console.log(error)
+        errorValida(error);
       });
     }
 
@@ -59,6 +56,7 @@
         if (error.data.error == 'invalid_grant') {
           console.log('Usuario y/o contrasenia invalidos!!!');
         }
+        toastr.error('Sucedió un error inesperado, por favor inténtalo en unos minutos y si el error persiste comuníquese con el ADM.', 'Error');
       } else if (error.statusText == 'Internal Server Error') {
         toastr.error('Tu conexión a internet es muy lenta, por favor verifica tu señal de internet.', 'Soy Lucas');
         logout();
