@@ -1,11 +1,12 @@
-#Gestión de ventas
+Gestión de ventas
 ==========
 
-Sistema para la gestión para un puesto de ventas
+Sistema para la gestión de un puesto de ventas desarrollado en AngularJS, PHP, Bootstrap, html5 y css3.
 
-Este fichero se usa de ejemplo dentro del blog de aprendegit.com para crear un primer repositorio.
+![Sigeven](https://hugoroca.github.io/assets/img/SIGEVEN.png)
 
-Ejemplos de markdown
+
+Pantallas
 --------------------
 
 Así se crean secciones y subsecciones. Para crear una enumeración utilizamos:
