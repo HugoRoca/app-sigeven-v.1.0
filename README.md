@@ -6,8 +6,8 @@ Sistema de gestión para un puesto de ventas, registro de artículos, registro d
 * [Registro de gastos](#registro-de-gastos)
 * [Registro de ventas](#registro-de-ventas)
 * [Consultas]()
-    -[Consulta de gastos](#consulta-de-gastos)
-    -[Installation](#consulta-de-ventas)
+    - [Consulta de gastos](#consulta-de-gastos)
+    - [Installation](#consulta-de-ventas)
 * [Otros](#otros)
 
 ![Principal](https://hugoroca.github.io/assets/img/SIGEVEN.png)
