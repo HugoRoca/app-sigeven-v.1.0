@@ -7,5 +7,15 @@ _ _ _
 ###### Registro de artículos
 ![articulos](https://hugoroca.github.io/assets/img/sigeven/3.-articulos.png)
 ![articulos_modal](https://hugoroca.github.io/assets/img/sigeven/4.-articulos_modal.png)
+###### Registro de gastos
+![gastos](https://hugoroca.github.io/assets/img/sigeven/5.-gastos.png)
 ###### Registro de ventas
-
+![ventas](https://hugoroca.github.io/assets/img/sigeven/6.-ventas.png)
+###### Consulta de gastos
+![consulta_gastos](https://hugoroca.github.io/assets/img/sigeven/9.-consulta_gastos.png)
+![consulta_gastos_detalle](https://hugoroca.github.io/assets/img/sigeven/10.-consulta_gastos_detalle.png)
+###### Consulta de ventas
+![consulta_ventas](https://hugoroca.github.io/assets/img/sigeven/9.-consulta_ventas.png)
+![consulta_ventas_detalle](https://hugoroca.github.io/assets/img/sigeven/10.-consulta_ventas_detalle.png)
+###### Otros
+![otros](https://hugoroca.github.io/assets/img/sigeven/11.-otros.png)
