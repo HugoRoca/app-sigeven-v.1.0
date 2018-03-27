@@ -15,7 +15,7 @@ _ _ _
 ![consulta_gastos](https://hugoroca.github.io/assets/img/sigeven/9.-consulta_gastos.png)
 ![consulta_gastos_detalle](https://hugoroca.github.io/assets/img/sigeven/10.-consulta_gastos_detalle.png)
 ###### Consulta de ventas
-![consulta_ventas](https://hugoroca.github.io/assets/img/sigeven/9.-consulta_ventas.png)
-![consulta_ventas_detalle](https://hugoroca.github.io/assets/img/sigeven/10.-consulta_ventas_detalle.png)
+![consulta_ventas](https://hugoroca.github.io/assets/img/sigeven/7.-consulta_ventas.png)
+![consulta_ventas_detalle](https://hugoroca.github.io/assets/img/sigeven/8.-consulta_ventas_detalle.png)
 ###### Otros
 ![otros](https://hugoroca.github.io/assets/img/sigeven/11.-otros.png)
