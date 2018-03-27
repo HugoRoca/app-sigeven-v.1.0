@@ -1,7 +1,16 @@
 # Sistema de gestión de ventas
 Sistema de gestión para un puesto de ventas, registro de artículos, registro de venta y gasto diario. **Sistema desarrollado en angularJS, PHP, bootstrap, html5 y css3.**
-![Principal](https://hugoroca.github.io/assets/img/SIGEVEN.png)
 
+## Contenido
+* [Registro de artículos](#registro-de-artículos)
+* [Registro de gastos](#registro-de-gastos)
+* [Registro de ventas](#registro-de-ventas)
+* [Consultas]()
+    -[Consulta de gastos](#consulta-de-gastos)
+    -[Installation](#consulta-de-ventas)
+* [Otros](#otros)
+
+![Principal](https://hugoroca.github.io/assets/img/SIGEVEN.png)
 _ _ _
 #### Pantallas
 ###### Registro de artículos
