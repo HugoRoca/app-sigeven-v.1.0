@@ -1,130 +1,129 @@
 <div ng-controller="proveedorController as vm">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Proveedor</h1>
+        <div class="col-sm-12">
+            <h4 class="page-title">Proveedor</h4>
+            <p class="text-muted page-title-alt">
+                <a href="" ui-sref="portal" ui-sref-activate="activate">Dashboard</a> / Proveedor
+            </p>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href="" ui-sref="portal" ui-sref-activate="activate">Menú Principal</a> / Proveedor
-        </div>
-        <div class="panel-body" style="padding: 10px">
-            <form role="form" novalidate name="frmProveedor" class="form-horizontal">
-                <div class="row">
-                    <div class="col-md-offset-8 col-md-4">
-                        <div class="form-group">
-                            <label class="control-label col-md-7">Fecha: </label>
-                            <div class="col-md-5">
-                                <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.Proveedor.dFecha">
-                            </div>
+    <div class="card-box">
+        <form role="form" novalidate name="frmProveedor" class="form-horizontal">
+            <div class="row">
+                <div class="col-md-offset-8 col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-7">Fecha: </label>
+                        <div class="col-md-5">
+                            <input type="text" id="txtFecha" class="form-control" data-date-format="dd/mm/yyyy" ng-model="vm.Proveedor.dFecha">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Nombre Proveedor: </label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" maxlength="100" autofocus autocomplete="off" ng-model="vm.Proveedor.cNomProveedor" maxlength="200">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Artículo:</label>
-                            <div class="col-md-8">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Buscar..." disabled ng-model="vm.Proveedor.cArticulo">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" ng-click="vm.llamaModal()">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">PxC:</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control text-right" ng-model="vm.Proveedor.nPrecioCompra">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">PxV:</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control text-right" ng-model="vm.Proveedor.nPrecioVenta">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Cant.:</label>
-                            <div class="col-md-8">
-                                <input type="number" class="form-control text-right" id="txtCantidad" ng-model="vm.Proveedor.nCantidad">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-10 col-md-2">
-                        <p>
-                            <button class="btn btn-primary btn-block" ng-click="vm.agregarFila()">
-                                <span class="fa fa-plus"></span> Agregar</button>
-                        </p>
-                    </div>
-                </div>
-            </form>
-            <div class="table-responsive">
-                <table class="table table table-hover table-bordered " id="tblProveedor">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>ID</th>
-                            <th>Descripción</th>
-                            <th>PxC</th>
-                            <th>PxV</th>
-                            <th>Cantidad</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    <tfoot>
-                        <td>
-                            <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
-                                <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
-                        </td>
-                        <td colspan="4" class="text-right">
-                            <h4>
-                                <b>Total:</b>
-                            </h4>
-                        </td>
-                        <td class="text-right">
-                            <h4>
-                                <b>{{vm.Proveedor.nCantidadTotal}}</b>
-                            </h4>
-                        </td>
-                        <td class="text-right">
-                            <h4>
-                                <b>{{vm.Proveedor.nTotalProveedor | currency:'S/'}}</b>
-                            </h4>
-                        </td>
-                    </tfoot>
-                </table>
             </div>
             <div class="row">
-                <div class="col-md-offset-9 col-md-3">
-                    <p class="text-right">
-                        <button class="btn btn-success btn-block" type="button" ng-click="vm.insertarProveedor()">
-                            <span class="fa fa-save"></span> Registrar Proveedor</button>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Nombre Proveedor: </label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" maxlength="100" autofocus autocomplete="off" ng-model="vm.Proveedor.cNomProveedor"
+                                maxlength="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Artículo:</label>
+                        <div class="col-md-8">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Buscar..." disabled ng-model="vm.Proveedor.cArticulo">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="vm.llamaModal()">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">PxC:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control text-right" ng-model="vm.Proveedor.nPrecioCompra">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">PxV:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control text-right" ng-model="vm.Proveedor.nPrecioVenta">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Cant.:</label>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control text-right" id="txtCantidad" ng-model="vm.Proveedor.nCantidad">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-10 col-md-2">
+                    <p>
+                        <button class="btn btn-primary btn-block" ng-click="vm.agregarFila()">
+                            <span class="fa fa-plus"></span> Agregar</button>
                     </p>
                 </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table table-hover table-bordered " id="tblProveedor">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Descripción</th>
+                        <th>PxC</th>
+                        <th>PxV</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <td>
+                        <button class="btn btn-danger btn-block" id="btnEliminar" type="button" ng-click="vm.eliminarFila()">
+                            <span class="fa fa-trash"></span> Eliminar Seleccionados</button>
+                    </td>
+                    <td colspan="4" class="text-right">
+                        <h4>
+                            <b>Total:</b>
+                        </h4>
+                    </td>
+                    <td class="text-right">
+                        <h4>
+                            <b>{{vm.Proveedor.nCantidadTotal}}</b>
+                        </h4>
+                    </td>
+                    <td class="text-right">
+                        <h4>
+                            <b>{{vm.Proveedor.nTotalProveedor | currency:'S/'}}</b>
+                        </h4>
+                    </td>
+                </tfoot>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-9 col-md-3">
+                <p class="text-right">
+                    <button class="btn btn-success btn-block" type="button" ng-click="vm.insertarProveedor()">
+                        <span class="fa fa-save"></span> Registrar Proveedor</button>
+                </p>
             </div>
         </div>
     </div>
