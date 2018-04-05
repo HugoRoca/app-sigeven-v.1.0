@@ -419,8 +419,8 @@ BEGIN
   SELECT 
 	(SELECT COUNT(*) FROM articulo WHERE nEstado = 1) AS nArticulos,
 	(SELECT COUNT(*) FROM venta) AS nVentas,
-	(SELECT AVG(nTotal) FROM venta WHERE MONTH(dfechaReg) = MONTH(NOW())) AS nPromedioVentas,
-	(SELECT AVG(nTotal) FROM gasto WHERE MONTH(dfechaReg) = MONTH(NOW())) AS nPromedioGasto,
+	(SELECT ifnull(AVG(nTotal), 0) FROM venta WHERE MONTH(dfechaReg) = MONTH(NOW())) AS nPromedioVentas,
+	(SELECT ifnull(AVG(nTotal), 0) FROM gasto WHERE MONTH(dfechaReg) = MONTH(NOW())) AS nPromedioGasto,
 	(SELECT MONTH(NOW())) AS cMes;
 END */$$
 DELIMITER ;
