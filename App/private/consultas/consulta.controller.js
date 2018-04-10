@@ -23,9 +23,12 @@
 
         vm.buscaVentas = buscaVentas;
         vm.modalVenta = modalVenta;
-
+        
         vm.buscaGastos = buscaGastos;
         vm.modalGasto = modalGasto;
+
+        vm.buscaProveedor = buscaProveedor;
+        vm.modalProveedor = modalProveedor;
 
         activate();
 
@@ -70,6 +73,10 @@
             });
         }
 
+        function buscaProveedor() {
+            console.log('click');
+        }
+
         function modalVenta(id, tot, fech, cant) {
             vm.Consulta.cTitulo = fech;
             vm.Consulta.nTotal = 'S/ ' + formatoMiles(tot);
@@ -93,6 +100,9 @@
             }, function(error){
                 authenticationService.errorValida(error);
             });  
+        }
+        function modalProveedor() {
+            
         }
     }
 })();
