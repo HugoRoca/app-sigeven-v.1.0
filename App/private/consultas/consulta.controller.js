@@ -101,6 +101,7 @@
                 authenticationService.errorValida(error);
             });  
         }
+
         function modalProveedor() {
             
         }
