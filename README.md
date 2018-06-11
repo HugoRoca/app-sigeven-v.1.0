@@ -10,21 +10,21 @@ Sistema de gestión para un puesto de ventas, registro de artículos, registro d
     - [Installation](#consulta-de-ventas)
 * [Otros](#otros)
 
-![Principal](https://preview.ibb.co/jSbqq8/1_login.png)
+![Principal](https://image.ibb.co/iH9Aq8/1_login.png)
 _ _ _
 #### Pantallas
 ###### Registro de artículos
-![articulos](https://preview.ibb.co/kpk0q8/3_articulos.png)
-![articulos_modal](https://preview.ibb.co/e14Mxo/4_articulos_modal.png)
+![articulos](https://image.ibb.co/hz0piT/3_articulos.png)
+![articulos_modal](https://image.ibb.co/gp6qq8/4_articulos_modal.png)
 ###### Registro de gastos
-![gastos](https://preview.ibb.co/e1Os3T/5_gastos.png)
+![gastos](https://image.ibb.co/itskOT/5_gastos.png)
 ###### Registro de ventas
-![ventas](https://thumb.ibb.co/hzA0q8/6_ventas.png)
+![ventas](https://image.ibb.co/cMOLq8/6_ventas.png)
 ###### Consulta de gastos
-![consulta_gastos](https://thumb.ibb.co/jO05OT/9_consulta_gastos.png)
-![consulta_gastos_detalle](https://thumb.ibb.co/kSGZHo/10_consulta_gastos_detalle.png)
+![consulta_gastos](https://image.ibb.co/hgys3T/9_consulta_gastos.png)
+![consulta_gastos_detalle](https://image.ibb.co/dcbqq8/10_consulta_gastos_detalle.png)
 ###### Consulta de ventas
-![consulta_ventas](https://thumb.ibb.co/isd9iT/7_consulta_ventas.png)
-![consulta_ventas_detalle](https://thumb.ibb.co/maDQOT/8_consulta_ventas_detalle.png)
+![consulta_ventas](https://image.ibb.co/gfTmV8/7_consulta_ventas.png)
+![consulta_ventas_detalle](https://image.ibb.co/hV2KiT/8_consulta_ventas_detalle.png)
 ###### Otros
-![otros](https://thumb.ibb.co/fwQmDT/11_otros.png)
+![otros](https://image.ibb.co/cboj08/11_otros.png)
