@@ -10,21 +10,21 @@ Sistema de gestión para un puesto de ventas, registro de artículos, registro d
     - [Installation](#consulta-de-ventas)
 * [Otros](#otros)
 
-![Principal](https://hugoroca.github.io/assets/img/SIGEVEN.png)
+![Principal](https://preview.ibb.co/jSbqq8/1_login.png)
 _ _ _
 #### Pantallas
 ###### Registro de artículos
-![articulos](https://hugoroca.github.io/assets/img/sigeven/3.-articulos.png)
-![articulos_modal](https://hugoroca.github.io/assets/img/sigeven/4.-articulos_modal.png)
+![articulos](https://preview.ibb.co/kpk0q8/3_articulos.png)
+![articulos_modal](https://preview.ibb.co/e14Mxo/4_articulos_modal.png)
 ###### Registro de gastos
-![gastos](https://hugoroca.github.io/assets/img/sigeven/5.-gastos.png)
+![gastos](https://preview.ibb.co/e1Os3T/5_gastos.png)
 ###### Registro de ventas
-![ventas](https://hugoroca.github.io/assets/img/sigeven/6.-ventas.png)
+![ventas](https://thumb.ibb.co/hzA0q8/6_ventas.png)
 ###### Consulta de gastos
-![consulta_gastos](https://hugoroca.github.io/assets/img/sigeven/9.-consulta_gastos.png)
-![consulta_gastos_detalle](https://hugoroca.github.io/assets/img/sigeven/10.-consulta_gastos_detalle.png)
+![consulta_gastos](https://thumb.ibb.co/jO05OT/9_consulta_gastos.png)
+![consulta_gastos_detalle](https://thumb.ibb.co/kSGZHo/10_consulta_gastos_detalle.png)
 ###### Consulta de ventas
-![consulta_ventas](https://hugoroca.github.io/assets/img/sigeven/7.-consulta_ventas.png)
-![consulta_ventas_detalle](https://hugoroca.github.io/assets/img/sigeven/8.-consulta_ventas_detalle.png)
+![consulta_ventas](https://thumb.ibb.co/isd9iT/7_consulta_ventas.png)
+![consulta_ventas_detalle](https://thumb.ibb.co/maDQOT/8_consulta_ventas_detalle.png)
 ###### Otros
-![otros](https://hugoroca.github.io/assets/img/sigeven/11.-otros.png)
+![otros](https://thumb.ibb.co/fwQmDT/11_otros.png)
